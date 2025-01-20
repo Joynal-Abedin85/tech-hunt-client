@@ -1,15 +1,17 @@
 import React, { useContext } from "react";
-import { Authcontext } from "./Authprovider";
+// import { Authcontext } from "./Authprovider";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 // import useaxiospublic from "../hook/useaxiospublic";
 import Swal from "sweetalert2";
 import Sociallogin from "./Sociallogin";
+import useaxiospublic from "../../hook/useaxiospublic";
+import { Authcontext } from "./Authprovider";
 // import Sociallogin from "./Sociallogin";
 
 const Register = () => {
   const navigate = useNavigate()
-//   const axiospublic = useaxiospublic()
+  const axiospublic = useaxiospublic()
   const {
     register,
     handleSubmit,

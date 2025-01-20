@@ -3,6 +3,7 @@ import React, {  createContext, useEffect, useState } from 'react';
 import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
 // import useaxiospublic from '../hook/useaxiospublic';
 import { app } from './firease.init';
+import useaxiospublic from '../../hook/useaxiospublic';
 export const Authcontext = createContext(null)
 const auth = getAuth(app)
 const Authprovider = ({children}) => {
@@ -10,7 +11,7 @@ const Authprovider = ({children}) => {
     const [user,setuser] = useState(null)
     const [loading , setloading] = useState(true)
     const googleprovider = new GoogleAuthProvider()
-    // const axiospublic = useaxiospublic()
+    const axiospublic = useaxiospublic()
 
 
     const createuser = (email, password) => {

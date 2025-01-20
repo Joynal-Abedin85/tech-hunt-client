@@ -1,7 +1,8 @@
 import axios from "axios";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { Authcontext } from "../auth/Authprovider";
+import { Authcontext } from "../pages/auth/Authprovider";
+// import { Authcontext } from "../auth/Authprovider";
 
 export const axiossecure = axios.create({
   baseURL: "http://localhost:5000",
