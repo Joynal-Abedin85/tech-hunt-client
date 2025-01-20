@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { FaUtensils } from "react-icons/fa";
 // import { data } from 'react-router-dom';
-import { register } from "swiper/element";
+// import { register } from "swiper/element";
+import Swal from "sweetalert2";
+import { Authcontext } from "../auth/Authprovider";
 import useaxiospublic from "../../hook/useaxiospublic";
 import useaxios from "../../hook/useaxios";
-import Swal from "sweetalert2";
 
 
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY
@@ -16,8 +17,10 @@ const Additems = () => {
   const { register, handleSubmit, reset } = useForm();
   const axiospublic = useaxiospublic()
   const axiossecure = useaxios()
+  const {user} = useContext(Authcontext)
   const onSubmit = async (data) => {
-    const imagefile = {image: data.image[0]}
+    console.log(data.productImage)
+    const imagefile = {image: data.productImage[0]}
     const res = await axiospublic.post(image_hosting_api, imagefile, {
         headers: {
             'content-type': 'multipart/form-data'
@@ -25,13 +28,14 @@ const Additems = () => {
     })
     if(res.data.success){
         const menuitem = {
-            name: data.name,
-            category: data.category,
-            price: parseFloat(data.price),
-            recipe: data.recipe,
+            name: data.productName,
+
+            // category: data.category,
+            // price: parseFloat(data.price),
+            description: data.description,
             image: res.data.data.display_url
         }
-        const menures = await axiossecure.post('/menu', menuitem)
+        const menures = await axiossecure.post('/tech', menuitem)
         console.log(menures.data)
         if(menures.data.insertedId){
             reset()
@@ -147,7 +151,7 @@ const Additems = () => {
           {...register("productName", { required: "Product Name is required" })}
           style={{ width: "100%", padding: "8px", margin: "5px 0" }}
         />
-        {errors.productName && <p style={{ color: "red" }}>{errors.productName.message}</p>}
+        {/* {errors.productName && <p style={{ color: "red" }}>{errors.productName.message}</p>} */}
       </div>
 
       {/* Product Image */}
@@ -158,7 +162,7 @@ const Additems = () => {
           {...register("productImage", { required: "Product Image is required" })}
           style={{ width: "100%", padding: "8px", margin: "5px 0" }}
         />
-        {errors.productImage && <p style={{ color: "red" }}>{errors.productImage.message}</p>}
+        {/* {errors.productImage && <p style={{ color: "red" }}>{errors.productImage.message}</p>} */}
       </div>
 
       {/* Description */}
@@ -168,17 +172,17 @@ const Additems = () => {
           {...register("description", { required: "Description is required" })}
           style={{ width: "100%", padding: "8px", margin: "5px 0" }}
         />
-        {errors.description && <p style={{ color: "red" }}>{errors.description.message}</p>}
+        {/* {errors.description && <p style={{ color: "red" }}>{errors.description.message}</p>} */}
       </div>
 
       {/* Owner Info */}
       <div style={{ marginBottom: "15px" }}>
         <label>Product Owner Info:</label>
         <div style={{ display: "flex", alignItems: "center", gap: "10px", marginTop: "10px" }}>
-          <img src={ownerInfo.ownerImage} alt="Owner" style={{ width: "50px", height: "50px", borderRadius: "50%" }} />
+          <img src={user?.photoURL} alt="Owner" style={{ width: "50px", height: "50px", borderRadius: "50%" }} />
           <div>
-            <p><strong>Name:</strong> {ownerInfo.ownerName}</p>
-            <p><strong>Email:</strong> {ownerInfo.ownerEmail}</p>
+            <p><strong>Name:</strong> {user?.displayName}</p>
+            <p><strong>Email:</strong> {user?.email}</p>
           </div>
         </div>
       </div>
@@ -186,14 +190,14 @@ const Additems = () => {
       {/* Tags */}
       <div style={{ marginBottom: "15px" }}>
         <label>Tags:</label>
-        <ReactTagInput
+        {/* <ReactTagInput
           tags={tags}
           handleDelete={handleTagDelete}
           handleAddition={handleTagAddition}
           placeholder="Add new tag"
           inputFieldPosition="top"
           autocomplete
-        />
+        /> */}
       </div>
 
       {/* External Links */}

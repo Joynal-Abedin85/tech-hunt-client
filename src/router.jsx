@@ -6,6 +6,7 @@ import Home from "./pages/Users/Home";
 import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
 import Dashboard from "./pages/Dashoard/Dashboard";
+import Additems from "./pages/Users/Additems";
 
    const router = createBrowserRouter([
     {
@@ -28,7 +29,13 @@ import Dashboard from "./pages/Dashoard/Dashboard";
     },
     {
         path: 'dashboard',
-        element: <Dashboard></Dashboard>
+        element: <Dashboard></Dashboard>,
+        children: [
+            {
+                path: 'additems',
+                element: <Additems></Additems>
+            }
+        ]
     }
   ]);
 

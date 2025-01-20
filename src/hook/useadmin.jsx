@@ -2,9 +2,10 @@ import React, { useContext } from 'react';
 // import { Authcontext } from '../auth/Authprovider';
 // import useaxios from './useaxios';
 import { use } from 'react';
-import { useQuery } from '@tanstack/react-query';
+// import { useQuery } from '@tanstack/react-query';
 import { Authcontext } from '../pages/auth/Authprovider';
 import useaxios from './useaxios';
+import { useQuery } from '@tanstack/react-query';
 
 const useadmin = () => {
     const {user} = useContext(Authcontext)
