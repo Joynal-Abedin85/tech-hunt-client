@@ -25,6 +25,10 @@ import Register from "./pages/auth/Register";
         }
       ]
     },
+    {
+        path: 'dashoard',
+        element: 
+    }
   ]);
 
   export default router
