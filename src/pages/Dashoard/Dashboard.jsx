@@ -38,7 +38,7 @@ const Dashboard = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/dashboard/allusers">
+            <NavLink to="/dashboard/alluser">
               <FaUsers></FaUsers>
               All users
             </NavLink>
@@ -46,41 +46,24 @@ const Dashboard = () => {
           
             </> : <>
             <li>
-            <NavLink to="/">
-              <FaHome></FaHome>
-               Home
+            <NavLink to="/dashboard/myprofile">
+              <FaUser></FaUser>
+               my profile
             </NavLink>
           </li>
           <li>
-            <NavLink to="/dashboard/reserve">
-              <FaCalendar></FaCalendar>
-              Reservation
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/payment">
-              <FaWallet></FaWallet>
-              Payment history
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/cart">
+            <NavLink to="/dashboard/myproduct">
               <FaShoppingCart></FaShoppingCart>
-              My cart
+              My product
             </NavLink>
           </li>
           <li>
             <NavLink to="/dashboard/additems">
               <FaStar></FaStar>
-              Add items
+              Add product
             </NavLink>
           </li>
-          <li>
-            <NavLink to="/dashboard/paymenthistory">
-              <FaList></FaList>
-              payment history my 
-            </NavLink>
-          </li></>
+          </>
           }
 
           <div className="divider divider-primary">or</div>
@@ -88,7 +71,7 @@ const Dashboard = () => {
           <li>
             <NavLink to="/">
               <FaHome></FaHome>
-              user Home
+               Home
             </NavLink>
           </li>
           <li>
@@ -97,18 +80,7 @@ const Dashboard = () => {
               Menu
             </NavLink>
           </li>
-          <li>
-            <NavLink to="/dashboard/home">
-              <FaShoppingCart></FaShoppingCart>
-              Shop
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/home">
-              <FaPhone></FaPhone>
-              Contect
-            </NavLink>
-          </li>
+          
           
         </ul>
       </div>

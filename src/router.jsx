@@ -7,6 +7,8 @@ import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
 import Dashboard from "./pages/Dashoard/Dashboard";
 import Additems from "./pages/Users/Additems";
+import Alluser from "./pages/admin/Alluser";
+import Product from "./pages/navpage/Product";
 
    const router = createBrowserRouter([
     {
@@ -24,6 +26,10 @@ import Additems from "./pages/Users/Additems";
         {
             path: 'register',
             element: <Register></Register>
+        },
+        {
+            path: 'products',
+            element: <Product></Product>
         }
       ]
     },
@@ -34,6 +40,10 @@ import Additems from "./pages/Users/Additems";
             {
                 path: 'additems',
                 element: <Additems></Additems>
+            },
+            {
+                path: 'alluser',
+                element: <Alluser></Alluser>
             }
         ]
     }
