@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaUtensils } from "react-icons/fa";
 // import { data } from 'react-router-dom';
@@ -7,6 +7,7 @@ import Swal from "sweetalert2";
 import { Authcontext } from "../auth/Authprovider";
 import useaxiospublic from "../../hook/useaxiospublic";
 import useaxios from "../../hook/useaxios";
+import ReactTagInput from "@pathofdev/react-tag-input";
 
 
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY
@@ -18,6 +19,11 @@ const Additems = () => {
   const axiospublic = useaxiospublic()
   const axiossecure = useaxios()
   const {user} = useContext(Authcontext)
+  const [tags, setTags] = useState([]);
+
+  const handleTagsChange = (newTags) => {
+    setTags(newTags);
+  };
   const onSubmit = async (data) => {
     console.log(data.productImage)
     const imagefile = {image: data.productImage[0]}
@@ -29,11 +35,12 @@ const Additems = () => {
     if(res.data.success){
         const menuitem = {
             name: data.productName,
-
-            // category: data.category,
-            // price: parseFloat(data.price),
+            ownername: user.displayName,
+            owneremail: user.email,
+            ownerimage: user.photoURL,
             description: data.description,
-            image: res.data.data.display_url
+            image: res.data.data.display_url,
+            tags
         }
         const menures = await axiossecure.post('/tech', menuitem)
         console.log(menures.data)
@@ -51,95 +58,6 @@ const Additems = () => {
     console.log(res.data)
   };
   return (
-    // <div>
-    //   <div className="w-max text-center  mx-auto my-10">
-    //     <h2 className="text-4xl text-amber-400 pb-2">---what's new---</h2>
-    //     <h2 className="uppercase text-5xl  border-y-4 py-3">Add item</h2>
-    //   </div>
-     
-    //   <form onSubmit={handleSubmit(onSumit)} className="max-w-lg mx-auto bg-gray-100 p-6 rounded-md shadow-md">
-    //   <div className="mb-4">
-    //     <label className="block text-sm font-bold mb-2" htmlFor="recipeName">
-    //       Recipe Name*
-    //     </label>
-    //     <input
-    //       id="recipeName"
-    //       {...register('name')}
-    //       type="text"
-    //       className="w-full p-2 border rounded"
-    //       placeholder="Recipe name"
-    //       required
-    //     />
-    //   </div>
-
-    //   <div className="flex gap-4 mb-4">
-    //     <div className="w-1/2">
-    //       <label className="block text-sm font-bold mb-2" htmlFor="category">
-    //         Category*
-    //       </label>
-    //       {/* <input {...register("name")} /> */}
-    //     <select defaultValue='default' {...register("category")} className="select w-full ">
-    //       <option disabled value='default'>
-    //         select a category
-    //       </option>
-    //       <option value="salad">salad</option>
-    //       <option value="pizza">pizza</option>
-    //       <option value="soup">soup</option>
-    //       <option value="dessert">dessert</option>
-    //       <option value="drinks">drinks</option>
-    //     </select>
-    //     </div>
-
-    //     <div className="w-1/2">
-    //       <label className="block text-sm font-bold mb-2" htmlFor="price">
-    //         Price*
-    //       </label>
-    //       <input
-    //         id="price"
-    //         type="number"
-    //         {...register('price')}
-    //         className="w-full p-2 border rounded"
-    //         placeholder="Price"
-    //         required
-    //       />
-    //     </div>
-    //   </div>
-
-    //   <div className="mb-4">
-    //     <label className="block text-sm font-bold mb-2" htmlFor="details">
-    //       Recipe Details*
-    //     </label>
-    //     <textarea
-    //     {...register('recipe')}
-    //       id="details"
-    //       className="w-full p-2 border rounded"
-    //       rows="4"
-    //       placeholder="Recipe details"
-    //       required
-    //     ></textarea>
-    //   </div>
-
-    //   <div className="mb-4">
-    //     <label className="block text-sm font-bold mb-2" htmlFor="file">
-    //       Upload File
-    //     </label>
-    //     <input
-    //     {...register('image')}
-    //       id="file"
-    //       type="file"
-    //       className="block w-full text-sm"
-    //       onChange={(e) => setFile(e.target.files[0])}
-    //     />
-    //   </div>
-
-    //   <button
-    //     type="submit"
-    //     className="bg-transparent text-black  btn py-2 px-4 rounded hover:bg-yellow-600"
-    //   >
-    //     Add Item <FaUtensils></FaUtensils>
-    //   </button>
-    // </form>
-    // </div>
     <div style={{ maxWidth: "600px", margin: "0 auto", padding: "20px", border: "1px solid #ddd", borderRadius: "8px" }}>
     <h2>Add Product</h2>
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -190,14 +108,15 @@ const Additems = () => {
       {/* Tags */}
       <div style={{ marginBottom: "15px" }}>
         <label>Tags:</label>
-        {/* <ReactTagInput
+        <ReactTagInput
           tags={tags}
-          handleDelete={handleTagDelete}
-          handleAddition={handleTagAddition}
+          // handleDelete={handleTagDelete}
+          // handleAddition={handleTagAddition}
+          onChange={handleTagsChange}
           placeholder="Add new tag"
           inputFieldPosition="top"
           autocomplete
-        /> */}
+        />
       </div>
 
       {/* External Links */}
