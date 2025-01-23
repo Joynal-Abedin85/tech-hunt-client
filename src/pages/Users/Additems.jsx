@@ -34,13 +34,16 @@ const Additems = () => {
     })
     if(res.data.success){
         const menuitem = {
+          // ...data,
+          timestamp: new Date(),
             name: data.productName,
             ownername: user.displayName,
             owneremail: user.email,
             ownerimage: user.photoURL,
             description: data.description,
             image: res.data.data.display_url,
-            tags
+            tags,
+            votes: 0
         }
         const menures = await axiossecure.post('/tech', menuitem)
         console.log(menures.data)

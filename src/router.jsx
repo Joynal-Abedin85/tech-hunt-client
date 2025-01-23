@@ -9,6 +9,7 @@ import Dashboard from "./pages/Dashoard/Dashboard";
 import Additems from "./pages/Users/Additems";
 import Alluser from "./pages/admin/Alluser";
 import Product from "./pages/navpage/Product";
+import Myproducts from "./pages/Users/Myproducts";
 
    const router = createBrowserRouter([
     {
@@ -37,14 +38,22 @@ import Product from "./pages/navpage/Product";
         path: 'dashboard',
         element: <Dashboard></Dashboard>,
         children: [
+            // user route 
             {
                 path: 'additems',
                 element: <Additems></Additems>
             },
             {
+                path: 'myproduct',
+                element: <Myproducts></Myproducts>
+            },
+
+            //admin  route
+            {
                 path: 'alluser',
                 element: <Alluser></Alluser>
-            }
+            },
+            
         ]
     }
   ]);
