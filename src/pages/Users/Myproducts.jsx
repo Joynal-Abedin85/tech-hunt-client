@@ -1,6 +1,28 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { Authcontext } from '../auth/Authprovider';
+import { Link } from 'react-router-dom';
 
 const Myproducts = () => {
+  const [product, setproduct] = useState([]);
+  
+    const { user } = useContext(Authcontext);
+  
+   
+  
+    useEffect(() => {
+      fetch("http://localhost:5000/tech")
+        .then((res) => res.json())
+        .then((data) => {
+          if (user?.email) {
+            // Filter the data by user email
+            const filteredData = data.filter(
+              (item) => item.owneremail === user.email
+            );
+            console.log(filteredData)
+            setproduct(filteredData);
+          }
+        });
+    }, [user?.email]);
     return (
         <div>
              <div className="container mx-auto mt-10">
@@ -15,7 +37,7 @@ const Myproducts = () => {
           </tr>
         </thead>
         <tbody>
-          {products.map((product) => (
+          {product.map((product) => (
             <tr key={product._id} className="hover:bg-gray-50">
               <td className="border border-gray-300 px-4 py-2">{product.name}</td>
               <td className="border border-gray-300 px-4 py-2">{product.votes}</td>
