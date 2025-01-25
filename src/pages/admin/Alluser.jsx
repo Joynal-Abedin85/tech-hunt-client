@@ -24,13 +24,12 @@ const Alluser = () => {
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
-        console.log(result)
+      console.log(result);
       if (result.isConfirmed) {
-        axiossecure.delete(`/users/${user._id}`)
-        .then((res) => {
-            console.log(res.data)
+        axiossecure.delete(`/users/${user._id}`).then((res) => {
+          console.log(res.data);
           if (res.data.deletedCount > 0) {
-            refetch()
+            refetch();
             Swal.fire({
               title: "Deleted!",
               text: "Your file has been deleted.",
@@ -46,7 +45,7 @@ const Alluser = () => {
     axiossecure.patch(`/users/admin/${user._id}`).then((res) => {
       console.log(res.data);
       if (res.data.modifiedCount > 0) {
-        refetch()
+        refetch();
         Swal.fire({
           position: "top-end",
           icon: "success",
@@ -56,6 +55,23 @@ const Alluser = () => {
         });
       }
     });
+  }
+
+
+    const makemoderator = (user) => {
+      axiossecure.patch(`/users/moderator/${user._id}`).then((res) => {
+        console.log(res.data);
+        if (res.data.modifiedCount > 0) {
+          refetch();
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: `${user.name} is moderator now`,
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+      });
   };
   return (
     <>
@@ -82,15 +98,37 @@ const Alluser = () => {
                 <td>{user.name}</td>
                 <td>{user.email}</td>
                 <td>
-                    {
+                  {/* {
                         user.role === 'admin' ? "admin" : <button
                         onClick={() => makeadmin(user)}
                         className="btn btn-ghost btn-lg"
                       >
                         <FaUsers className="text-amber-500"></FaUsers>
                       </button> 
-                    }
-                  
+                    } */}
+
+                  {user.role === "admin" ? (
+                    <span className="text-green-600 font-bold">Admin</span>
+                  ) : user.role === "moderator" ? (
+                    <span className="text-blue-600 font-bold">Moderator</span>
+                  ) : (
+                    <div className="flex space-x-2">
+                      <button
+                        onClick={() => makeadmin(user)}
+                        className="btn btn-ghost btn-lg"
+                      >
+                        <FaUsers className="text-amber-500" />
+                        Make Admin
+                      </button>
+                      <button
+                        onClick={() => makemoderator(user)}
+                        className="btn btn-ghost btn-lg"
+                      >
+                        <FaUsers className="text-blue-500" />
+                        Make Moderator
+                      </button>
+                    </div>
+                  )}
                 </td>
                 <td>
                   <button
