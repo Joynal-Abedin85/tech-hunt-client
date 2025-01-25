@@ -11,6 +11,7 @@ import Alluser from "./pages/admin/Alluser";
 import Product from "./pages/navpage/Product";
 import Myproducts from "./pages/Users/Myproducts";
 import Details from "./components/Details";
+import Myprofile from "./pages/Users/Myprofile";
 
    const router = createBrowserRouter([
     {
@@ -52,6 +53,10 @@ import Details from "./components/Details";
             {
                 path: 'myproduct',
                 element: <Myproducts></Myproducts>
+            },
+            {
+                path: 'myprofile',
+                element: <Myprofile></Myprofile>
             },
 
             //admin  route

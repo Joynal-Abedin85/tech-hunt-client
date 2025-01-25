@@ -23,32 +23,20 @@ const Details = () => {
     });
 
   
-    // Fetch product details
-    // useEffect(() => {
-    //   const fetchProduct = async () => {
-    //     try {
-    //       const response = await axios.get(`http://localhost:5000/tech/${_id}`);
-    //       setProduct(response.data);
-    //       console.log(response.data)
-    //     } catch (error) {
-    //       console.error("Error fetching product:", error);
-    //     }
-    //   };
-    //   fetchProduct();
-    // }, [id]);
+   
   
     // Fetch reviews
-    // useEffect(() => {
-    //   const fetchReviews = async () => {
-    //     try {
-    //       const response = await axios.get(`http://localhost:5000/reviews/${id}`);
-    //       setReviews(response.data);
-    //     } catch (error) {
-    //       console.error("Error fetching reviews:", error);
-    //     }
-    //   };
-    //   fetchReviews();
-    // }, [id]);
+    useEffect(() => {
+      const fetchReviews = async () => {
+        try {
+          const response = await axios.get(`http://localhost:5000/reviews/${id}`);
+          setReviews(response.data);
+        } catch (error) {
+          console.error("Error fetching reviews:", error);
+        }
+      };
+      fetchReviews();
+    }, [id]);
   
     // Handle Upvote
     // const handleUpvote = async () => {
@@ -81,32 +69,10 @@ const Details = () => {
     //   }
     // };
   
-    // Handle Review Submit
-    // const handleSubmitReview = async (e) => {
-    //   e.preventDefault();
-    //   try {
-    //     const reviewData = {
-    //       ...reviewForm,
-    //       productId: id,
-    //       reviewerName: user.displayName,
-    //       reviewerImage: user.photoURL,
-    //     };
-    //     await axios.post("http://localhost:5000/reviews", reviewData);
-    //     setReviews([...reviews, reviewData]);
-    //     setReviewForm({ description: "", rating: 0 });
-    //   } catch (error) {
-    //     console.error("Error submitting review:", error);
-    //   }
-    // };
+   
 
      const onSubmit = async (data) => {
-        // console.log(data.productImage)
-        // const imagefile = {image: data.productImage[0]}
-        // const res = await axiospublic.post(image_hosting_api, imagefile, {
-        //     headers: {
-        //         'content-type': 'multipart/form-data'
-        //     }
-        // })
+       
         console.log(data)
         if(data){
             const menuitem = {
@@ -123,6 +89,7 @@ const Details = () => {
             console.log(menures.data)
             if(menures.data.insertedId){
                 reset()
+                refetch()
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
@@ -180,7 +147,7 @@ const Details = () => {
         
   
         {/* Reviews Section */}
-        {/* <div>
+        <div>
           <h3 className="text-xl font-semibold mb-4">Reviews</h3>
           <div className="space-y-4">
             {reviews.map((review, index) => (
@@ -190,12 +157,12 @@ const Details = () => {
               >
                 <div className="flex items-center space-x-4">
                   <img
-                    src={review.reviewerImage}
-                    alt={review.reviewerName}
+                    src={review.ownerimage}
+                    alt={review.ownername}
                     className="w-10 h-10 rounded-full object-cover"
                   />
                   <div>
-                    <h4 className="font-semibold">{review.reviewerName}</h4>
+                    <h4 className="font-semibold">{review.ownername}</h4>
                     <p className="text-sm text-gray-500">
                       Rating: {review.rating}/5
                     </p>
@@ -205,76 +172,9 @@ const Details = () => {
               </div>
             ))}
           </div>
-        </div> */}
+        </div>
   
-        {/* Post Review Section */}
-        {/* {user && (
-          <form
-            onSubmit={handleSubmitReview}
-            className="p-6 border rounded-lg shadow bg-white"
-          >
-            <h3 className="text-xl font-semibold mb-4">Post a Review</h3>
-            <div className="space-y-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Reviewer Name
-                </label>
-                <input
-                  type="text"
-                  value={user.displayName}
-                  readOnly
-                  className="w-full p-2 border rounded bg-gray-100"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Reviewer Image
-                </label>
-                <input
-                  type="text"
-                  value={user.photoURL}
-                  readOnly
-                  className="w-full p-2 border rounded bg-gray-100"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Review Description
-                </label>
-                <textarea
-                  value={reviewForm.description}
-                  onChange={(e) =>
-                    setReviewForm({ ...reviewForm, description: e.target.value })
-                  }
-                  className="w-full p-2 border rounded"
-                  required
-                ></textarea>
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Rating (1-5)
-                </label>
-                <input
-                  type="number"
-                  min="1"
-                  max="5"
-                  value={reviewForm.rating}
-                  onChange={(e) =>
-                    setReviewForm({ ...reviewForm, rating: e.target.value })
-                  }
-                  className="w-full p-2 border rounded"
-                  required
-                />
-              </div>
-            </div>
-            <button
-              type="submit"
-              className="mt-4 px-6 py-2 bg-green-500 text-white rounded hover:bg-green-600"
-            >
-              Submit
-            </button>
-          </form>
-        )} */}
+       
 
         {/* try su review  */}
         <form onSubmit={handleSubmit(onSubmit)}>
