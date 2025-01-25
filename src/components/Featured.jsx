@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Authcontext } from '../pages/auth/Authprovider';
 import { FaThumbsUp } from 'react-icons/fa';
 import useaxiospublic from '../hook/useaxiospublic';
+import { NavLink } from 'react-router-dom';
 
 const Featured = () => {
     const { user } = useContext(Authcontext);
@@ -60,7 +61,7 @@ const Featured = () => {
                 alt={product.name}
                 className="w-full h-40 object-cover rounded-md mb-4"
               />
-              <h3 className="text-lg font-semibold mb-2">{product.name}</h3>
+              <NavLink to={`/details/${product._id}`}><h3 className="text-lg font-semibold mb-2">{product.name}</h3></NavLink>
               <div className="flex flex-wrap gap-2 mb-4">
                 {product.tags?.map((tag, index) => (
                   <span

@@ -10,6 +10,7 @@ import Additems from "./pages/Users/Additems";
 import Alluser from "./pages/admin/Alluser";
 import Product from "./pages/navpage/Product";
 import Myproducts from "./pages/Users/Myproducts";
+import Details from "./components/Details";
 
    const router = createBrowserRouter([
     {
@@ -31,7 +32,12 @@ import Myproducts from "./pages/Users/Myproducts";
         {
             path: 'products',
             element: <Product></Product>
-        }
+        }, 
+        {
+            path: 'details/:id',
+            element: <Details></Details>,
+            loader: ({params}) => fetch(`http://localhost:5000/tech/${params.id}`)
+          },
       ]
     },
     {
