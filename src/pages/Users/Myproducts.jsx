@@ -1,9 +1,15 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Authcontext } from '../auth/Authprovider';
 import { Link } from 'react-router-dom';
+import useaxios from '../../hook/useaxios';
+import Swal from 'sweetalert2';
+import { useQuery } from '@tanstack/react-query';
 
 const Myproducts = () => {
   const [product, setproduct] = useState([]);
+  const axiossecure = useaxios()
+  // const {refetch} = useQuery()
+
   
     const { user } = useContext(Authcontext);
   
@@ -23,6 +29,35 @@ const Myproducts = () => {
           }
         });
     }, [user?.email]);
+
+
+    const  handleDelete = id  => {
+      Swal.fire({
+          title: "Are you sure?",
+          text: "You won't be able to revert this!",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+          if (result.isConfirmed) {
+          
+              axiossecure.delete(`/tech/${id}`)
+              .then(res => {
+                  if(res.data.deletedCount > 0){
+                      // refetch()
+                      Swal.fire({
+                              title: "Deleted!",
+                              text: "Your file has been deleted.",
+                              icon: "success"
+                            });
+                  }
+              })
+  
+          }
+        });
+    }
     return (
         <div>
              <div className="container mx-auto mt-10">
