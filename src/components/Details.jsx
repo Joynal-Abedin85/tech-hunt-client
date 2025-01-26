@@ -29,7 +29,7 @@ const Details = () => {
     useEffect(() => {
       const fetchReviews = async () => {
         try {
-          const response = await axios.get(`http://localhost:5000/reviews/${id}`);
+          const response = await axios.get(`https://tech-hunt-server-theta.vercel.app/reviews/${id}`);
           setReviews(response.data);
         } catch (error) {
           console.error("Error fetching reviews:", error);
@@ -45,7 +45,7 @@ const Details = () => {
     //     if (!token) return console.error("User not logged in");
   
     //     await axios.post(
-    //       `http://localhost:5000/tech/upvote/${id}`,
+    //       `https://tech-hunt-server-theta.vercel.app/tech/upvote/${id}`,
     //       {},
     //       {
     //         headers: { Authorization: `Bearer ${token}` },
@@ -60,7 +60,7 @@ const Details = () => {
     // Handle Report
     // const handleReport = async () => {
     //   try {
-    //     await axios.post(`http://localhost:5000/tech/report/${id}`, {
+    //     await axios.post(`https://tech-hunt-server-theta.vercel.app/tech/report/${id}`, {
     //       reporter: user.email,
     //     });
     //     alert("Product reported successfully.");

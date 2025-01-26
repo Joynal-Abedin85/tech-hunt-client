@@ -32,7 +32,7 @@ const Dashboard = () => {
           {isadmin ? (
             <>
               <li>
-                <NavLink to="/dashboard/statistics">
+                <NavLink to="/dashboard/statistic">
                   <FaList></FaList>
                   statistics
                 </NavLink>

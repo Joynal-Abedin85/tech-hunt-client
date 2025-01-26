@@ -18,7 +18,7 @@ const Product = () => {
   };
 
   useEffect(() => {
-    fetch("http://localhost:5000/tech")
+    fetch("https://tech-hunt-server-theta.vercel.app/tech")
       .then((res) => res.json())
       .then((data) => setproduct(data));
   }, []);

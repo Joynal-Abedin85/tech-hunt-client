@@ -5,7 +5,7 @@ import { Authcontext } from "../pages/auth/Authprovider";
 // import { Authcontext } from "../auth/Authprovider";
 
 export const axiossecure = axios.create({
-  baseURL: "http://localhost:5000",
+  baseURL: "https://tech-hunt-server-theta.vercel.app",
 });
 
 const useaxios = () => {

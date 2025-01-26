@@ -2,7 +2,7 @@ import axios from "axios";
 
 
 const axiospublic = axios.create({
-    baseURL: 'http://localhost:5000'
+    baseURL: 'https://tech-hunt-server-theta.vercel.app'
 })
 
 const useaxiospublic = () => {

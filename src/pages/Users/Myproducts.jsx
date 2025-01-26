@@ -6,9 +6,9 @@ import Swal from 'sweetalert2';
 import { useQuery } from '@tanstack/react-query';
 
 const Myproducts = () => {
+  
   const [product, setproduct] = useState([]);
   const axiossecure = useaxios()
-  // const {refetch} = useQuery()
 
   
     const { user } = useContext(Authcontext);
@@ -16,7 +16,7 @@ const Myproducts = () => {
    
   
     useEffect(() => {
-      fetch("http://localhost:5000/tech")
+      fetch("https://tech-hunt-server-theta.vercel.app/tech")
         .then((res) => res.json())
         .then((data) => {
           if (user?.email) {
@@ -34,7 +34,7 @@ const Myproducts = () => {
     const  handleDelete = id  => {
       Swal.fire({
           title: "Are you sure?",
-          text: "You won't be able to revert this!",
+          text: "You want delete this!",
           icon: "warning",
           showCancelButton: true,
           confirmButtonColor: "#3085d6",
@@ -46,7 +46,9 @@ const Myproducts = () => {
               axiossecure.delete(`/tech/${id}`)
               .then(res => {
                   if(res.data.deletedCount > 0){
-                      // refetch()
+                    setproduct((prevProducts) =>
+                      prevProducts.filter((item) => item._id !== id)
+                    );
                       Swal.fire({
                               title: "Deleted!",
                               text: "Your file has been deleted.",
@@ -58,6 +60,8 @@ const Myproducts = () => {
           }
         });
     }
+
+    console.log(product)
     return (
         <div>
              <div className="container mx-auto mt-10">
@@ -73,7 +77,7 @@ const Myproducts = () => {
         </thead>
         <tbody>
           {product.map((product) => (
-            <tr key={product._id} className="hover:bg-gray-50">
+            <tr key={product._id} className="hover:bg-gray-100 hover:bg-opacity-10">
               <td className="border border-gray-300 px-4 py-2">{product.name}</td>
               <td className="border border-gray-300 px-4 py-2">{product.votes}</td>
               <td
