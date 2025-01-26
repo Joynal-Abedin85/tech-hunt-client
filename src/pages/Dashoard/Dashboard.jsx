@@ -25,7 +25,7 @@ const Dashboard = () => {
   console.log(user?.role)
   return (
     <div className="flex">
-      <div className="bg-amber-400  text-black font-bold w-60 min-h-full fixed top-0 left-0 h-screen overflow-y-auto p-4">
+      <div className="bg-purple-400  text-black font-bold w-60 min-h-full fixed top-0 left-0 h-screen overflow-y-auto p-4">
         <ul className="menu  p-4 space-y-3 ">
           
 
@@ -53,21 +53,15 @@ const Dashboard = () => {
           ) : ismodarator ? (
             <>
               <li>
-                <NavLink to="/dashboard/statistics">
+                <NavLink to="/dashboard/review">
                   <FaList></FaList>
-                  modar
+                  product review
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/coopon">
+                <NavLink to="/dashboard/reported">
                   <FaBook></FaBook>
-                  modar
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/dashboard/alluser">
-                  <FaUsers></FaUsers>
-                  All users
+                  reported contents
                 </NavLink>
               </li>
             </>
