@@ -19,14 +19,8 @@ const Navbar = () => {
       <NavLink to="/">HOME</NavLink>
       <NavLink to='/products'>products</NavLink>
       <NavLink to='/dashboard'>DASHBOARD</NavLink>
-      <NavLink to="/ourmenu">OUR MENU</NavLink>
-      <NavLink to="/food/soup">Food order</NavLink>
-      <NavLink to='/dashboard/cart'>
-        <button className="btn">
-          <FaShoppingCart></FaShoppingCart>
-          <div className="badge badge-secondary">+</div>
-        </button>
-      </NavLink>
+      
+      
     </>
   );
   return (
@@ -56,7 +50,7 @@ const Navbar = () => {
             {menu}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">BISTRO BOSS</a>
+        <a className="btn btn-ghost text-xl">TECH HUNT</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1  gap-4">{menu}</ul>
@@ -64,12 +58,35 @@ const Navbar = () => {
       <div className="navbar-end">
         {user ? (
           <>
-            <h3
+
+<div className="dropdown dropdown-end">
+      <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+        <div className="w-10 rounded-full">
+          <img
+            alt="Tailwind CSS Navbar component"
+            src={user.photoURL} />
+        </div>
+      </div>
+      <ul
+        tabIndex={0}
+        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+        <li>
+          <a className="justify-between">
+            {user.displayName}
+          </a>
+        </li>
+        <NavLink to='/dashboard'><li><a>DASHBOARD</a></li></NavLink>
+        <h3
               onClick={logouts}
               className="btn hover:bg-amber-400 hover:text-white border-transparent hover:bg-transparent border-amber-500 text-amber-500 hover:border-2"
             >
               sign out
             </h3>
+      </ul>
+    </div>
+
+          {/* prev  */}
+            
           </>
         ) : (
           <>
