@@ -1,8 +1,32 @@
-# React + Vite
+# wevsite name 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Tech hunt
 
-Currently, two official plugins are available:
+# wevsite featured
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<ul>
+    <li>you can add a product </li>
+    <li>if you need update you can update your product</li>
+    <li>if any product you choose you can like this product </li>
+    <li>admin can make modarator or make admin anyone </li>
+    <li>you can see featured or tranding product </li>
+    
+</ul>
+
+# use tools frontend
+
+<ul>
+ <li> javascript</li>
+ <li>daisy ui </li>
+ <li>react icon </li>
+ <li> react chart</li>
+ <li>react slider </li>
+ <li>tailwind </li>
+</ul>
+
+# live link
+
+https://tech-hunt-edc5f.web.app/
+
+admin email and pass 
+kazitareq@gmail.com   aaaaaa
