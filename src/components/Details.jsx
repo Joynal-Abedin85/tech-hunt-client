@@ -12,6 +12,8 @@ const Details = () => {
       const { register, handleSubmit, reset } = useForm();
       const axiospublic = useaxiospublic()
   const axiossecure = useaxios()
+
+  // const [product, setproduct] = useState([])
     
     const { id } = useParams(); // Get product ID from URL
     const { user } = useContext(Authcontext); // Get user details from context
@@ -23,7 +25,61 @@ const Details = () => {
       rating: 0,
     });
 
-  
+
+  // product 
+
+
+
+  // handle report 
+
+  const handleReport = async () => {
+    if (!user) {
+      Swal.fire({
+        icon: "warning",
+        title: "Please log in to report this product.",
+        showConfirmButton: true,
+      });
+      return;
+    }
+
+    const reportData = {
+      productId: _id,
+      reportedBy: user.email,
+      productName: name
+    };
+
+    console.log("Report Data:", reportData);
+
+    try {
+      const response = await axios.post(
+        `https://tech-hunt-server-theta.vercel.app/reports`,
+        reportData
+      );
+
+      if (response.data.success) {
+        Swal.fire({
+          icon: "success",
+          title: "Product reported successfully.",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: response.data.message || "Failed to report product.",
+          showConfirmButton: true,
+        });
+      }
+    } catch (error) {
+      console.error("Error reporting product:", error);
+      Swal.fire({
+        icon: "error",
+        title: "Something went wrong.",
+        text: error.message,
+        showConfirmButton: true,
+      });
+    }
+  };
    
   
     // Fetch reviews
@@ -41,7 +97,7 @@ const Details = () => {
   
   
   
-   
+  //  sumit 
 
      const onSubmit = async (data) => {
        
@@ -99,7 +155,7 @@ const Details = () => {
                 </p>
                 <div className="flex space-x-4 mt-6">
                   <button
-                    // onClick={handleReport}
+                    onClick={handleReport}
                     className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
                   >
                     Report

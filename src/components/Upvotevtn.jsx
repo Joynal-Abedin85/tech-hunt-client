@@ -3,6 +3,7 @@ import { FaThumbsUp } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Authcontext } from "../pages/auth/Authprovider";
+import Swal from "sweetalert2";
 
 const Upvotevtn = ({product}) => {
   const { user } = useContext(Authcontext);
@@ -27,7 +28,13 @@ const Upvotevtn = ({product}) => {
     }
 
     if (hasVoted) {
-      alert("You have already voted on this product");
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Your work has been saved",
+        showConfirmButton: false,
+        timer: 1500
+      });
       return;
     }
 
