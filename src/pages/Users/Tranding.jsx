@@ -1,11 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Authcontext } from '../pages/auth/Authprovider';
-import { FaThumbsUp } from 'react-icons/fa';
-import useaxiospublic from '../hook/useaxiospublic';
-import { NavLink } from 'react-router-dom';
-import Upvotevtn from './Upvotevtn';
 
-const Featured = () => {
+import { FaThumbsUp } from 'react-icons/fa';
+import { Link, NavLink } from 'react-router-dom';
+import { Authcontext } from '../auth/Authprovider';
+import useaxiospublic from '../../hook/useaxiospublic';
+import Upvotevtn from '../../components/Upvotevtn';
+
+const Tranding = () => {
     const { user } = useContext(Authcontext);
     const axiospublic = useaxiospublic();
     const [products, setProducts] = useState([]);
@@ -19,7 +20,7 @@ const Featured = () => {
           const sortedProducts = response.data.sort(
             (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
           );
-          setProducts(sortedProducts.slice(0, 4)); // Get the latest 4 products
+          setProducts(sortedProducts.slice(0, 6)); // Get the latest 4 products
         } catch (error) {
           console.error("Error fetching products:", error);
         }
@@ -27,11 +28,30 @@ const Featured = () => {
       fetchProducts();
     }, []);
   
-    
+    const handleUpvote = async (productId) => {
+      try {
+        await axiospublic.post(`/tech/upvote/${productId}`, {
+          email: user?.email,
+        }, 
+        {
+            headers: { authorization: `Bearer ${token}` }, // Include token in the header
+          });
+        // Update UI after upvote
+        setProducts((prevProducts) =>
+          prevProducts.map((product) =>
+            product._id === productId
+              ? { ...product, votes: product.votes + 1 }
+              : product
+          )
+        );
+      } catch (error) {
+        console.error("Error upvoting product:", error);
+      }
+    };
   
     return (
       <div className="max-w-7xl mx-auto p-6">
-        <h2 className="text-2xl font-bold mb-6">Featured Products</h2>
+        <h2 className="text-2xl font-bold mb-6">Tranding  Products</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
           {products?.map((product) => (
             <div
@@ -43,7 +63,7 @@ const Featured = () => {
                 alt={product.name}
                 className="w-full h-40 object-cover rounded-md mb-4"
               />
-              <NavLink to={`/details/${product._id}`}><h3 className="text-lg font-semibold mb-2">{product.name}</h3></NavLink>
+              <NavLink to={`/details/${product._id}`}><h3 className="text-lg text-purple-500 font-semibold mb-2">{product.name}</h3></NavLink>
               <div className="flex flex-wrap gap-2 mb-4">
                 {product.tags?.map((tag, index) => (
                   <span
@@ -62,9 +82,10 @@ const Featured = () => {
               </div>
             </div>
           ))}
+          <Link to='/products'><button className='btn font-bold bg-purple-500 text-xl text-black hover:text-purple-600'>show more</button></Link>
         </div>
       </div>
     );
   };
 
-export default Featured;
+export default Tranding;

@@ -1,21 +1,24 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Authcontext } from "../auth/Authprovider";
 import { FaThumbsUp } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
+import Upvotevtn from "../../components/Upvotevtn";
 
 const Product = () => {
   const [product, setproduct] = useState([]);
 
   const { user } = useContext(Authcontext);
 
-  const [votes, setVotes] = useState(product.votes || 0);
+  // const [votes, setVotes] = useState(product.votes || 0);
   const isOwner = user?.email === product.owneremail;
+  
 
-  const handleUpvote = () => {
-    if (!isOwner && user) {
-      setVotes(votes + 1);
-      // Add logic to update votes in the backend
-    }
-  };
+  // const handleUpvote = () => {
+  //   if (!isOwner && user) {
+  //     setVotes(votes + 1);
+  //     // Add logic to update votes in the backend
+  //   }
+  // };
 
   useEffect(() => {
     fetch("https://tech-hunt-server-theta.vercel.app/tech")
@@ -82,7 +85,7 @@ const Product = () => {
           />
 
           {/* Product Name */}
-          <h3 className="text-lg font-semibold mb-2">{product.name}</h3>
+          <NavLink to={`/details/${product._id}`}><h3 className="text-lg text-purple-500 font-semibold mb-2">{product.name}</h3></NavLink>
 
           {/* Tags */}
           <div className="flex flex-wrap gap-2 mb-4">
@@ -97,17 +100,8 @@ const Product = () => {
           </div>
 
           {/* Upvote Button */}
-          <button
-            onClick={handleUpvote}
-            disabled={isOwner || !user}
-            className={`flex items-center gap-2 px-4 py-2 text-sm font-semibold rounded ${
-              isOwner || !user
-                ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-                : "bg-blue-600 text-white hover:bg-blue-700"
-            }`}
-          >
-            <FaThumbsUp /> {votes} Votes
-          </button>
+          
+          <Upvotevtn product={product}></Upvotevtn>
 
           {/* Owner Info */}
           {isOwner && (

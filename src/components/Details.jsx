@@ -6,6 +6,7 @@ import { useForm } from 'react-hook-form';
 import useaxiospublic from '../hook/useaxiospublic';
 import useaxios from '../hook/useaxios';
 import Swal from 'sweetalert2';
+import Upvotevtn from './Upvotevtn';
 
 const Details = () => {
       const { register, handleSubmit, reset } = useForm();
@@ -38,36 +39,7 @@ const Details = () => {
       fetchReviews();
     }, [id]);
   
-    // Handle Upvote
-    // const handleUpvote = async () => {
-    //   try {
-    //     const token = localStorage.getItem("accessToken");
-    //     if (!token) return console.error("User not logged in");
   
-    //     await axios.post(
-    //       `https://tech-hunt-server-theta.vercel.app/tech/upvote/${id}`,
-    //       {},
-    //       {
-    //         headers: { Authorization: `Bearer ${token}` },
-    //       }
-    //     );
-    //     setProduct({ ...product, votes: product.votes + 1 });
-    //   } catch (error) {
-    //     console.error("Error upvoting product:", error);
-    //   }
-    // };
-  
-    // Handle Report
-    // const handleReport = async () => {
-    //   try {
-    //     await axios.post(`https://tech-hunt-server-theta.vercel.app/tech/report/${id}`, {
-    //       reporter: user.email,
-    //     });
-    //     alert("Product reported successfully.");
-    //   } catch (error) {
-    //     console.error("Error reporting product:", error);
-    //   }
-    // };
   
    
 
@@ -89,7 +61,9 @@ const Details = () => {
             console.log(menures.data)
             if(menures.data.insertedId){
                 reset()
-                refetch()
+
+                setReviews((prevReviews) => [menuitem, ...prevReviews]);
+                
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
@@ -101,7 +75,8 @@ const Details = () => {
         }
         console.log(data)
       };
-  
+
+
     return (
       <div className="p-6 space-y-10">
         {/* Product Details Section */}
@@ -123,17 +98,6 @@ const Details = () => {
                   <strong>Upvotes:</strong> {votes}
                 </p>
                 <div className="flex space-x-4 mt-6">
-                  <button
-                    // onClick={handleUpvote}
-                    className={`px-4 py-2 rounded ${
-                      user?.email === owneremail
-                        ? "bg-gray-300 cursor-not-allowed"
-                        : "bg-blue-500 text-white hover:bg-blue-600"
-                    }`}
-                    disabled={user?.email === owneremail}
-                  >
-                    Upvote
-                  </button>
                   <button
                     // onClick={handleReport}
                     className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
@@ -163,7 +127,7 @@ const Details = () => {
                   />
                   <div>
                     <h4 className="font-semibold">{review.ownername}</h4>
-                    <p className="text-sm text-gray-500">
+                    <p className="text-sm text-gray-600">
                       Rating: {review.rating}/5
                     </p>
                   </div>
@@ -184,7 +148,7 @@ const Details = () => {
               {/* rating  */}
 
               <div>
-                <label className="block text-sm font-medium text-gray-700">
+                <label className="block text-sm font-medium text-gray-300">
                   Rating (1-5)
                 </label>
                 <input

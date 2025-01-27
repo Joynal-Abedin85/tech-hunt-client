@@ -47,6 +47,7 @@ const Statistic = () => {
       <div className="flex flex-col items-center">
         <div className="w-full max-w-lg bg-white p-6 rounded-lg shadow-lg">
           <h3 className="text-xl font-bold text-center mb-4">Site Overview</h3>
+          <h2 className="text-center ">click the chart to show length</h2>
           <Pie data={chartData} />
         </div>
       </div>

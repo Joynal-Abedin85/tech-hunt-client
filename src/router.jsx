@@ -14,6 +14,7 @@ import Details from "./components/Details";
 import Myprofile from "./pages/Users/Myprofile";
 import Error from "./pages/auth/Error";
 import Statistic from "./pages/admin/Statistic";
+import Privateroute from "./pages/auth/Privateroute";
 
    const router = createBrowserRouter([
     {
@@ -34,18 +35,18 @@ import Statistic from "./pages/admin/Statistic";
         },
         {
             path: 'products',
-            element: <Product></Product>
+            element: <Privateroute><Product></Product></Privateroute>
         }, 
         {
             path: 'details/:id',
-            element: <Details></Details>,
+            element: <Privateroute><Details></Details></Privateroute>,
             loader: ({params}) => fetch(`https://tech-hunt-server-theta.vercel.app/tech/${params.id}`)
           },
       ]
     },
     {
         path: 'dashboard',
-        element: <Dashboard></Dashboard>,
+        element: <Privateroute><Dashboard></Dashboard></Privateroute>,
         children: [
             // user route 
             {
