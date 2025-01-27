@@ -15,6 +15,7 @@ import Myprofile from "./pages/Users/Myprofile";
 import Error from "./pages/auth/Error";
 import Statistic from "./pages/admin/Statistic";
 import Privateroute from "./pages/auth/Privateroute";
+import Reported from "./pages/Dashoard/Reported";
 
    const router = createBrowserRouter([
     {
@@ -70,6 +71,12 @@ import Privateroute from "./pages/auth/Privateroute";
             {
                 path: 'statistic',
                 element: <Statistic></Statistic>
+            },
+            // modarator 
+
+            {
+                path: 'reported',
+                element: <Reported></Reported>
             }
             
         ]

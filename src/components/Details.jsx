@@ -45,7 +45,10 @@ const Details = () => {
     const reportData = {
       productId: _id,
       reportedBy: user.email,
-      productName: name
+      productName: name,
+      image: image,
+      votes: votes,
+      tags: tags,
     };
 
     console.log("Report Data:", reportData);
@@ -74,7 +77,7 @@ const Details = () => {
       console.error("Error reporting product:", error);
       Swal.fire({
         icon: "error",
-        title: "Something went wrong.",
+        title: "already reported",
         text: error.message,
         showConfirmButton: true,
       });
