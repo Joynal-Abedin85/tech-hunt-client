@@ -14,7 +14,7 @@ const Featured = () => {
       // Fetch featured products from the server
       const fetchProducts = async () => {
         try {
-          const response = await axiospublic.get("/tech"); // Update with your API endpoint
+          const response = await axiospublic.get("/accept-product"); // Update with your API endpoint
           // Sort products by timestamp (latest first)
           const sortedProducts = response.data.sort(
             (a, b) => new Date(b.createdAt) - new Date(a.createdAt)

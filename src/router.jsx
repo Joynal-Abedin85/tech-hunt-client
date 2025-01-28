@@ -16,6 +16,8 @@ import Error from "./pages/auth/Error";
 import Statistic from "./pages/admin/Statistic";
 import Privateroute from "./pages/auth/Privateroute";
 import Reported from "./pages/Dashoard/Reported";
+import Review from "./pages/Dashoard/Review";
+import Update from "./pages/Dashoard/Update";
 
    const router = createBrowserRouter([
     {
@@ -77,6 +79,15 @@ import Reported from "./pages/Dashoard/Reported";
             {
                 path: 'reported',
                 element: <Reported></Reported>
+            },
+            {
+                path: 'review',
+                element: <Review></Review>
+            },
+            {
+                path: 'update-product/:id',
+                element: <Update></Update>,
+                loader: ({params}) => fetch(`https://tech-hunt-server-theta.vercel.app/tech/${params.id}`)
             }
             
         ]

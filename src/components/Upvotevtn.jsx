@@ -13,7 +13,7 @@ const Upvotevtn = ({product}) => {
   const [hasVoted, setHasVoted] = useState(false);
 
   const isOwner = user?.email === product.owneremail;
-    console.log(product._id);
+    // console.log(product._id);
 
   const handleUpvote = async () => {
     

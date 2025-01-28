@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Authcontext } from '../auth/Authprovider';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import useaxios from '../../hook/useaxios';
 import Swal from 'sweetalert2';
 import { useQuery } from '@tanstack/react-query';
@@ -92,12 +92,12 @@ const Myproducts = () => {
                 {product.status || "Pending"}
               </td>
               <td className="border border-gray-300 px-4 py-2 flex gap-4 justify-center">
-                <Link
+                <NavLink
                   to={`/update-product/${product._id}`}
                   className="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600"
                 >
                   Update
-                </Link>
+                </NavLink>j
                 <button
                   onClick={() => handleDelete(product._id)}
                   className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600"

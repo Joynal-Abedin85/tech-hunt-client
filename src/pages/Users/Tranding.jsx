@@ -15,10 +15,10 @@ const Tranding = () => {
       // Fetch featured products from the server
       const fetchProducts = async () => {
         try {
-          const response = await axiospublic.get("/tech"); // Update with your API endpoint
+          const response = await axiospublic.get("/accept-product"); // Update with your API endpoint
           // Sort products by timestamp (latest first)
           const sortedProducts = response.data.sort(
-            (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+            (a, b) => new Date(b.votes) - new Date(a.votes)
           );
           setProducts(sortedProducts.slice(0, 6)); // Get the latest 4 products
         } catch (error) {
@@ -28,26 +28,7 @@ const Tranding = () => {
       fetchProducts();
     }, []);
   
-    const handleUpvote = async (productId) => {
-      try {
-        await axiospublic.post(`/tech/upvote/${productId}`, {
-          email: user?.email,
-        }, 
-        {
-            headers: { authorization: `Bearer ${token}` }, // Include token in the header
-          });
-        // Update UI after upvote
-        setProducts((prevProducts) =>
-          prevProducts.map((product) =>
-            product._id === productId
-              ? { ...product, votes: product.votes + 1 }
-              : product
-          )
-        );
-      } catch (error) {
-        console.error("Error upvoting product:", error);
-      }
-    };
+   
   
     return (
       <div className="max-w-7xl mx-auto p-6">
