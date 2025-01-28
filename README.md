@@ -26,7 +26,3 @@ Tech hunt
 
 # live link
 
-https://tech-hunt-edc5f.web.app/
-
-admin email and pass 
-kazitareq@gmail.com   aaaaaa
