@@ -1,28 +1,42 @@
-# wevsite name 
+<h2>📌 Project Overview</h2>
+<p>Tech Hunt is a modern e-commerce platform where users can add, update, and like products. Admins have the ability to assign roles and manage featured or trending products. The platform offers an interactive user experience with a clean and responsive UI.</p>
 
-Tech hunt
+<h2>🖼️ Project Screenshot</h2>
+<p><em></em></p>
 
-# wevsite featured
-
+<h2>🛠️ Main Technologies Used</h2>
 <ul>
-    <li>you can add a product </li>
-    <li>if you need update you can update your product</li>
-    <li>if any product you choose you can like this product </li>
-    <li>admin can make modarator or make admin anyone </li>
-    <li>you can see featured or tranding product </li>
-    
+    <li>JavaScript</li>
+    <li>React.js</li>
+    <li>Tailwind CSS</li>
+    <li>DaisyUI</li>
+    <li>React Icons</li>
+    <li>React Charts</li>
+    <li>React Slider</li>
 </ul>
 
-# use tools frontend
-
+<h2>🚀 Core Features</h2>
 <ul>
- <li> javascript</li>
- <li>daisy ui </li>
- <li>react icon </li>
- <li> react chart</li>
- <li>react slider </li>
- <li>tailwind </li>
+    <li>🛍️ <strong>Add Products</strong> – Users can add new products to the platform.</li>
+    <li>✏️ <strong>Update Products</strong> – Modify product details as needed.</li>
+    <li>❤️ <strong>Like Products</strong> – Mark favorite products.</li>
+    <li>🔑 <strong>Role Management</strong> – Admins can assign moderator or admin roles.</li>
+    <li>🌟 <strong>Trending & Featured Products</strong> – View top products in a dedicated section.</li>
 </ul>
 
-# live link
+<h2>📦 Dependencies Used</h2>
+<ul>
+    <li>React Router – For navigation</li>
+    <li>Axios – For API requests</li>
+    <li>React Hook Form – For form handling</li>
+    <li>React Query – For data fetching and caching</li>
+    <li>Recharts – For data visualization</li>
+</ul>
 
+<h2>🛠️ How to Run Locally</h2>
+<ol>
+    <li><strong>Clone the Repository</strong>
+        <pre><code>git clone https://github.com/yourusername/tech-hunt.git
+
+<h2>🌍 Live Link</h2>
+<p><a href="https://tech-hunt-edc5f.web.app/">Tech Hunt Live Demo</a> </p>
