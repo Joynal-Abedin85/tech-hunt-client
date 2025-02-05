@@ -2,7 +2,7 @@
 <p>Tech Hunt is a modern e-commerce platform where users can add, update, and like products. Admins have the ability to assign roles and manage featured or trending products. The platform offers an interactive user experience with a clean and responsive UI.</p>
 
 <h2>🖼️ Project Screenshot</h2>
-<p><img src="[screenshot.png](https://ibb.co.com/d0G5Sm4g)" alt="Project Screenshot"></p>
+<p><img src="https://i.ibb.co.com/svyVhW9H/Screenshot-2025-02-03-131133.png" alt="Project Screenshot"></p>
 
 <h2>🛠️ Main Technologies Used</h2>
 <ul>
