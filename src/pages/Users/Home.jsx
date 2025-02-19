@@ -6,6 +6,7 @@ import Slider from '../../components/Slider';
 import Tranding from './Tranding';
 import Promotion from '../home/Promotion';
 import Review from '../home/Review';
+import News from '../home/News';
 
 const Home = () => {
     return (
@@ -15,6 +16,7 @@ const Home = () => {
             <Tranding></Tranding>
             <Promotion></Promotion>
             <Review></Review>
+            <News></News>
         </div>
     );
 };
