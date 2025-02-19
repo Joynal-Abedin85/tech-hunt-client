@@ -75,7 +75,7 @@ const Blog = () => {
             {/* Blog Card 4 */}
             <div className="bg-white p-6 rounded-lg shadow-lg hover:scale-105 transition-all">
               <img
-                src="https://cdn.pixabay.com/photo/2019/08/12/16/15/design-4394306_640.jpg"
+                src="https://media.graphassets.com/prAEoC4TxODVH7gj27N9"
                 alt="Blog 4"
                 className="w-full h-48 object-cover rounded-lg mb-4"
               />
@@ -94,7 +94,7 @@ const Blog = () => {
             {/* Blog Card 5 */}
             <div className="bg-white p-6 rounded-lg shadow-lg hover:scale-105 transition-all">
               <img
-                src="https://cdn.pixabay.com/photo/2020/01/19/14/47/coding-4774029_640.jpg"
+                src="https://d3f1iyfxxz8i1e.cloudfront.net/courses/course_image/12ee6ac16474.jpeg"
                 alt="Blog 5"
                 className="w-full h-48 object-cover rounded-lg mb-4"
               />
@@ -114,7 +114,7 @@ const Blog = () => {
             {/* Blog Card 6 */}
             <div className="bg-white p-6 rounded-lg shadow-lg hover:scale-105 transition-all">
               <img
-                src="https://cdn.pixabay.com/photo/2017/05/18/09/58/html-2328034_640.jpg"
+                src="https://img-c.udemycdn.com/course/750x422/685550_8ed4.jpg"
                 alt="Blog 6"
                 className="w-full h-48 object-cover rounded-lg mb-4"
               />

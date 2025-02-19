@@ -19,7 +19,7 @@ import Reported from "./pages/Dashoard/Reported";
 import Review from "./pages/Dashoard/Review";
 import Update from "./pages/Dashoard/Update";
 import About from "./pages/mainlayout/About";
-import Blog from "./pages/home/Blog";
+import Blog from "./pages/mainlayout/Blog";
 
    const router = createBrowserRouter([
     {
