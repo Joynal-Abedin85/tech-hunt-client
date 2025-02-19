@@ -4,6 +4,8 @@ import Navbar from './Navbar';
 import Featured from '../../components/Featured';
 import Slider from '../../components/Slider';
 import Tranding from './Tranding';
+import Promotion from '../home/Promotion';
+import Review from '../home/Review';
 
 const Home = () => {
     return (
@@ -11,6 +13,8 @@ const Home = () => {
             <Slider></Slider>
             <Featured></Featured>
             <Tranding></Tranding>
+            <Promotion></Promotion>
+            <Review></Review>
         </div>
     );
 };
