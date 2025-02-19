@@ -18,6 +18,8 @@ import Privateroute from "./pages/auth/Privateroute";
 import Reported from "./pages/Dashoard/Reported";
 import Review from "./pages/Dashoard/Review";
 import Update from "./pages/Dashoard/Update";
+import About from "./pages/mainlayout/About";
+import Blog from "./pages/home/Blog";
 
    const router = createBrowserRouter([
     {
@@ -45,6 +47,14 @@ import Update from "./pages/Dashoard/Update";
             element: <Privateroute><Details></Details></Privateroute>,
             loader: ({params}) => fetch(`https://tech-hunt-server-theta.vercel.app/tech/${params.id}`)
           },
+          {
+            path: 'about',
+            element: <Privateroute><About></About></Privateroute>
+          },
+          {
+            path: 'blog',
+            element: <Blog></Blog>
+          }
       ]
     },
     {
