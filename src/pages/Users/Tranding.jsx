@@ -27,7 +27,7 @@ const Tranding = () => {
       };
       fetchProducts();
     }, []);
-  
+  console.log(products)
    
   
     return (

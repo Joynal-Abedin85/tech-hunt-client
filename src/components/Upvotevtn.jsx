@@ -11,6 +11,7 @@ const Upvotevtn = ({product}) => {
   const navigate = useNavigate();
   const [votes, setVotes] = useState(product.votes);
   const [hasVoted, setHasVoted] = useState(false);
+  console.log(product)
 
   const isOwner = user?.email === product.owneremail;
     // console.log(product._id);
@@ -40,7 +41,7 @@ const Upvotevtn = ({product}) => {
 
     try {
       const response = await axios.post(
-        `https://tech-hunt-server-theta.vercel.app/tech/${product._id}/upvote`,
+        `https://tech-hunt-server-theta.vercel.app/accept-product/${product._id}/upvote`,
         { userId: user.uid } // Send the user ID
       );
 
