@@ -62,7 +62,7 @@ const Upvotevtn = ({product}) => {
       className={`flex items-center gap-2 px-4 py-2 text-sm font-semibold rounded ${
         hasVoted || isOwner
           ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-          : "bg-blue-600 text-white hover:bg-blue-700"
+          : "bg-[#197a97] text-white hover:bg-[#2fb3d8]"
       }`}
     >
       <FaThumbsUp /> {votes}  Votes

@@ -10,7 +10,6 @@ const Mainlayout = () => {
             <div className='relative top-20'>
             <Outlet></Outlet>
             </div>
-            <Footer></Footer>
             
         </div>
     );

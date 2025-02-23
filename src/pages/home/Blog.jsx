@@ -2,10 +2,10 @@ import React from 'react';
 
 const Blog = () => {
     return (
-        <section className="py-16 px-6 bg-gradient-to-r from-teal-400 to-blue-500">
+        <section className="py-16 px-6 ">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-white mb-8">Our Latest Blogs</h2>
-          <p className="text-lg text-white mb-12">Stay up-to-date with the latest insights, tips, and trends from our expert team.</p>
+          <h2 className="text-4xl font-bold  mb-8">Our Latest Blogs</h2>
+          <p className="text-lg  mb-12">Stay up-to-date with the latest insights, tips, and trends from our expert team.</p>
   
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Blog Card 1 */}

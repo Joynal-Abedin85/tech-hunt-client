@@ -49,7 +49,7 @@ const Review = () => {
   const displayedReviews = showMore ? allReviews : allReviews.slice(0, 3);
 
   return (
-    <section className="bg-gray-100 py-16 px-6">
+    <section className=" py-16 px-6">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-4xl font-bold text-gray-800 mb-4">
           ⭐ What Our Users Say
@@ -61,7 +61,7 @@ const Review = () => {
         <div className="grid md:grid-cols-3 gap-8">
           {displayedReviews.map((review) => (
             <div key={review.id} className="bg-white p-6 rounded-xl shadow-lg">
-              <p className="text-gray-700 italic">"{review.text}"</p>
+              <p className=" italic">"{review.text}"</p>
               <div className="flex items-center mt-4">
                 <img
                   src={review.image}

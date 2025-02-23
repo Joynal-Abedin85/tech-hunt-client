@@ -46,8 +46,8 @@ export default function Slider() {
           className={`absolute top-0 left-0 h-full w-full bg-cover bg-center`} 
           style={{ backgroundImage: `url(${slide.bgImage})` }}
         >
-          <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-center text-white text-center px-4">
-            <h2 className="text-3xl font-bold mb-2">{slide.title}</h2>
+          <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-white text-center px-4">
+            <h2 className="text-6xl font-bold mb-2 font-calligraphy text-[rgb(54,211,255)]">{slide.title}</h2>
             <p className="text-lg mb-4">{slide.description}</p>
             <button variant="outline">Learn More</button>
           </div>
@@ -55,8 +55,8 @@ export default function Slider() {
       ))}
 
       <div className="absolute top-2/3 transform -translate-y-1/2 left-4 flex gap-2">
-        <button onClick={handlePrev} className="bg-purple-400 hover:text-purple-500 text-black btn bg-opacity-70 hover:bg-opacity-100">Prev</button>
-        <button onClick={handleNext} className="bg-purple-400 hover:text-purple-500 btn text-black bg-opacity-70 hover:bg-opacity-100">Next</button>
+        <button onClick={handlePrev} className="bg-[#00c6ff] hover:text-purple-500 text-black btn bg-opacity-70 border-transparent hover:bg-opacity-100">Prev</button>
+        <button onClick={handleNext} className="bg-[#00c6ff] hover:text-purple-500 btn text-black bg-opacity-70 border-transparent hover:bg-opacity-100">Next</button>
       </div>
     </div>
   );

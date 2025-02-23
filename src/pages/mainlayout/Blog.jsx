@@ -3,12 +3,12 @@ import React from "react";
 const Blog = () => {
   return (
     <div>
-      <section className="py-16 px-6 bg-gradient-to-r from-teal-400 to-blue-500">
+      <section className="py-16 px-6 bg-[#ead6fc] text-[#46007f]">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-white mb-8">
+          <h2 className="text-4xl font-bold  mb-8">
             Our Latest Blogs
           </h2>
-          <p className="text-lg text-white mb-12">
+          <p className="text-lg mb-12">
             Stay up-to-date with the latest insights, tips, and trends from our
             expert team.
           </p>

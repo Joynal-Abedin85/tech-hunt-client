@@ -11,7 +11,7 @@ const News = () => {
   };
 
   return (
-    <section className="bg-gradient-to-r from-teal-500 to-blue-600 py-16 px-6 text-white text-center">
+    <section className=" py-16 px-6  text-center">
       <div className="max-w-2xl mx-auto">
         <h2 className="text-4xl font-bold mb-4">🚀 Join Our Newsletter</h2>
         <p className="text-lg mb-6">Get the latest updates, offers, and news delivered directly to your inbox.</p>

@@ -1,9 +1,9 @@
 import React from "react";
 import { FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa";
 
-export default function Footer() {
+const Footer = () =>{
   return (
-    <footer className="bg-gray-900 text-gray-300 mt-20 py-6">
+    <footer className="bg-[#d1a0fc] text-[#46007f] mt-20 py-6">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
         {/* Logo and Description */}
         <div className="flex flex-col items-start">
@@ -69,3 +69,5 @@ export default function Footer() {
     </footer>
   );
 }
+
+export default Footer

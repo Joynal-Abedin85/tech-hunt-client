@@ -17,11 +17,11 @@ const Navbar = () => {
   const menu = (
     <>
       <NavLink to="/">HOME</NavLink>
-      <NavLink to='/products'>products</NavLink>
-      <NavLink to='/blog'>blogs</NavLink>
+      <NavLink to='/products'>PRODUCTS</NavLink>
+      <NavLink to='/blog'>BLOGS</NavLink>
       {
         user && <> <NavLink to='/dashboard'>DASHBOARD</NavLink>
-        <NavLink to='/about'>about</NavLink> </>
+        <NavLink to='/about'>ABOUT</NavLink> </>
 
       }
       
@@ -29,7 +29,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="navbar text-white bg-base-100 fixed z-20 bg-opacity-35 backdrop-blur-md">
+    <div className="navbar text-[#28afd4]  bg-base-100 fixed z-20 bg-opacity-35 backdrop-blur-md">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -83,7 +83,7 @@ const Navbar = () => {
         <NavLink to='/dashboard'><li><a>DASHBOARD</a></li></NavLink>
         <h3
               onClick={logouts}
-              className="btn hover:bg-amber-400 hover:text-white border-transparent hover:bg-transparent border-amber-500 text-amber-500 hover:border-2"
+              className="btn hover:bg-[#32abcc] hover:text-white border-transparent hover:bg-transparent border-[#00c6ff] text-[#00c6ff] hover:border-2"
             >
               sign out
             </h3>

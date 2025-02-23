@@ -2,3 +2,48 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* #root > div > div.navbar.text-white.bg-base-100.fixed.z-20.bg-opacity-35.backdrop-blur-md > div.navbar-center.hidden.lg\:flex > ul > a.active {
+   
+} */
+
+/* #root > div > div.navbar.text-white.bg-base-100.fixed.z-20.bg-opacity-35.backdrop-blur-md > div.navbar-start > div > ul > a.active */
+
+ a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 15px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Active state */
+ a.active {
+  color: #00c6ff;
+}
+
+/* Underline animation */
+ a.active::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -4px;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  transition: width 0.3s ease-in-out, transform 0.3s ease-in-out;
+  transform: translateX(-50%);
+}
+
+/* Expand underline on active */
+ a.active::after {
+  width: 100%;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+

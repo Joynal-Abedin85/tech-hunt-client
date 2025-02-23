@@ -32,24 +32,26 @@ const Tranding = () => {
   
     return (
       <div className="max-w-7xl mx-auto p-6">
-        <h2 className="text-2xl font-bold mb-6">Tranding  Products</h2>
+        <h2 className="text-4xl  font-bold font-calligraphy   text-center mb-8">Trending Products</h2>
+          <p className="text-lg text-center  mb-12">Stay up-to-date with the latest insights, tips, and trends from our expert team.</p>
+  
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
           {products?.map((product) => (
             <div
               key={product._id}
-              className="border rounded-lg p-4 shadow hover:shadow-lg transition duration-300"
+              className=" bg-[#c994f5] rounded-lg p-4 shadow-lg hover:shadow transition duration-300 shadow-fuchsia-800"
             >
               <img
                 src={product.image}
                 alt={product.name}
-                className="w-full h-40 object-cover rounded-md mb-4"
+                className="w-full h-40  object-cover rounded-md mb-4"
               />
-              <NavLink to={`/details/${product._id}`}><h3 className="text-lg text-purple-500 font-semibold mb-2">{product.name}</h3></NavLink>
+              <NavLink to={`/details/${product._id}`}><h3 className="text-lg  font-semibold mb-2">{product.name}</h3></NavLink>
               <div className="flex flex-wrap gap-2 mb-4">
                 {product.tags?.map((tag, index) => (
                   <span
                     key={index}
-                    className="bg-blue-100 text-blue-600 text-xs font-medium px-2 py-1 rounded"
+                    className="bg-blue-100 text-[#5e1e72] text-xs font-medium px-2 py-1 rounded"
                   >
                     {tag}
                   </span>
@@ -57,10 +59,11 @@ const Tranding = () => {
               </div>
               <div className="flex justify-between items-center">
               <Upvotevtn product={product}></Upvotevtn>
-                <p className="text-sm text-gray-500">
+                <p className="text-sm ">
                   Posted by: {product.ownername}
                 </p>
               </div>
+              <NavLink to={`/details/${product._id}`}><h3 className="btn bg-[#e84cf7] hover:text-[#e84cf7] hover:bg-white   hover:border-[#e84cf7] border-transparent m text-[#000000] hover:border-2">details</h3></NavLink>
             </div>
           ))}
           <Link to='/products'><button className='btn font-bold bg-purple-500 text-xl text-black hover:text-purple-600'>show more</button></Link>

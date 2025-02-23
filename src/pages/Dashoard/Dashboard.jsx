@@ -26,12 +26,18 @@ const Dashboard = () => {
   return (
     <div className="flex">
      
-      <div className="bg-purple-400  text-black font-bold w-60 min-h-full fixed top-0 left-0 h-screen overflow-y-auto p-4">
+      <div className="bg-[#6f10c2] text-[#b172e6] font-bold w-60 min-h-full fixed top-0 left-0 h-screen overflow-y-auto p-4">
         <ul className="menu  p-4 space-y-3 ">
           
 
           {isadmin ? (
             <>
+            <li>
+                <NavLink to="/dashboard/myprofile">
+                  <FaUser></FaUser>
+                  my profile
+                </NavLink>
+              </li>
               <li>
                 <NavLink to="/dashboard/statistic">
                   <FaList></FaList>
@@ -53,6 +59,12 @@ const Dashboard = () => {
             </>
           ) : ismodarator ? (
             <>
+            <li>
+                <NavLink to="/dashboard/myprofile">
+                  <FaUser></FaUser>
+                  my profile
+                </NavLink>
+              </li>
               <li>
                 <NavLink to="/dashboard/review">
                   <FaList></FaList>

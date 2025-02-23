@@ -30,16 +30,16 @@ const Product = () => {
   };
 
   return (
-    <div>
+    <div className="bg-[#c994f5] px-5 py-24 relative -top-20">
       {/* Sorting Button */}
       <button
         onClick={handleSortToggle}
-        className="mb-4 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+        className="mb-4 px-4 py-2 bg-[#8b46c4] text-white rounded-lg hover:bg-[#7634ac]"
       >
         Sort by Votes ({sortOrder === "asc" ? "Ascending" : "Descending"})
       </button>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {sortedProducts.map((product) => (
           <div key={product._id} className="bg-white shadow-md rounded-lg p-4">
             {/* Product Image */}
@@ -75,6 +75,8 @@ const Product = () => {
             {isOwner && (
               <p className="text-sm text-gray-500 mt-2">This is your product.</p>
             )}
+
+            <NavLink to={`/details/${product._id}`}><h3 className="btn bg-[#e84cf7] hover:text-[#e84cf7] hover:bg-white   hover:border-[#e84cf7] border-transparent m text-[#000000] hover:border-2">details</h3></NavLink>
           </div>
         ))}
       </div>
