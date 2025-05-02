@@ -61,84 +61,88 @@ const Additems = () => {
     console.log(res.data)
   };
   return (
-    <div style={{ maxWidth: "600px", margin: "0 auto", padding: "20px", border: "1px solid #ddd", borderRadius: "8px" }}>
-    <h2>Add Product</h2>
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <div className="max-w-xl mx-auto p-6 border border-border rounded-lg bg-card text-text">
+    <h2 className="text-2xl font-bold mb-6">Add Product</h2>
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+      
       {/* Product Name */}
-      <div style={{ marginBottom: "15px" }}>
-        <label>Product Name:</label>
+      <div>
+        <label className="block mb-1">Product Name:</label>
         <input
           type="text"
           {...register("productName", { required: "Product Name is required" })}
-          style={{ width: "100%", padding: "8px", margin: "5px 0" }}
+          className="w-full p-2 rounded bg-bg text-text border border-border focus:outline-none focus:ring-2 focus:ring-primary"
         />
-        {/* {errors.productName && <p style={{ color: "red" }}>{errors.productName.message}</p>} */}
       </div>
-
+  
       {/* Product Image */}
-      <div style={{ marginBottom: "15px" }}>
-        <label>Product Image:</label>
+      <div>
+        <label className="block mb-1">Product Image:</label>
         <input
           type="file"
           {...register("productImage", { required: "Product Image is required" })}
-          style={{ width: "100%", padding: "8px", margin: "5px 0" }}
+          className="w-full p-2 rounded bg-bg text-text border border-border focus:outline-none focus:ring-2 focus:ring-primary"
         />
-        {/* {errors.productImage && <p style={{ color: "red" }}>{errors.productImage.message}</p>} */}
       </div>
-
+  
       {/* Description */}
-      <div style={{ marginBottom: "15px" }}>
-        <label>Description:</label>
+      <div>
+        <label className="block mb-1">Description:</label>
         <textarea
           {...register("description", { required: "Description is required" })}
-          style={{ width: "100%", padding: "8px", margin: "5px 0" }}
+          className="w-full p-2 rounded bg-bg text-text border border-border focus:outline-none focus:ring-2 focus:ring-primary"
         />
-        {/* {errors.description && <p style={{ color: "red" }}>{errors.description.message}</p>} */}
       </div>
-
+  
       {/* Owner Info */}
-      <div style={{ marginBottom: "15px" }}>
-        <label>Product Owner Info:</label>
-        <div style={{ display: "flex", alignItems: "center", gap: "10px", marginTop: "10px" }}>
-          <img src={user?.photoURL} alt="Owner" style={{ width: "50px", height: "50px", borderRadius: "50%" }} />
+      <div>
+        <label className="block mb-2">Product Owner Info:</label>
+        <div className="flex items-center gap-4">
+          <img
+            src={user?.photoURL}
+            alt="Owner"
+            className="w-12 h-12 rounded-full object-cover"
+          />
           <div>
             <p><strong>Name:</strong> {user?.displayName}</p>
             <p><strong>Email:</strong> {user?.email}</p>
           </div>
         </div>
       </div>
-
+  
       {/* Tags */}
-      <div style={{ marginBottom: "15px" }}>
-        <label>Tags:</label>
+      <div>
+        <label className="block mb-1">Tags:</label>
         <ReactTagInput
           tags={tags}
-          // handleDelete={handleTagDelete}
-          // handleAddition={handleTagAddition}
           onChange={handleTagsChange}
           placeholder="Add new tag"
           inputFieldPosition="top"
           autocomplete
         />
       </div>
-
+  
       {/* External Links */}
-      <div style={{ marginBottom: "15px" }}>
-        <label>External Links:</label>
+      <div>
+        <label className="block mb-1">External Links:</label>
         <input
           type="url"
           {...register("externalLink")}
           placeholder="https://example.com"
-          style={{ width: "100%", padding: "8px", margin: "5px 0" }}
+          className="w-full p-2 rounded bg-bg text-text border border-border focus:outline-none focus:ring-2 focus:ring-primary"
         />
       </div>
-
+  
       {/* Submit Button */}
-      <button type="submit" style={{ padding: "10px 20px", background: "blue", color: "white", border: "none", borderRadius: "5px", cursor: "pointer" }}>
+      <button
+        type="submit"
+        className="px-6 py-2 bg-primary text-white rounded hover:bg-hover transition-all duration-200"
+      >
         Submit
       </button>
     </form>
   </div>
+  
 
   );
 };

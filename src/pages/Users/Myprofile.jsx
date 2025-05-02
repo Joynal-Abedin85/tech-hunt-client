@@ -20,33 +20,34 @@ const Myprofile = () => {
 
 <div className="container mx-auto p-6 flex justify-center items-center">
   {/* Profile Header */}
-  <div className="mb-8 bg-[#f7f7f7] text-[#2d3748] p-12 rounded-lg shadow-2xl w-full max-w-3xl">
+  <div className="mb-8 bg-card text-text p-12 rounded-lg shadow-2xl w-full max-w-3xl">
     <div className="flex items-center space-x-8">
-      {/* Full-size image with same color design */}
-      <div className="w-full h-64 bg-[#46007f] rounded-lg overflow-hidden flex items-center justify-center">
+      {/* Full-size image with custom background */}
+      <div className="w-full h-64 bg-accent rounded-lg overflow-hidden flex items-center justify-center">
         <img
-          src={user.photoURL} // Replace with the actual image source
-          alt="Samantha Jones"
+          src={user.photoURL}
+          alt={user.displayName}
           className="w-full h-full object-cover"
         />
       </div>
     </div>
     <div className="mt-8">
-      <h2 className="text-4xl font-bold text-[#46007f]">{user.displayName}</h2>
-      <p className="text-lg text-gray-600">New York, United States</p>
-      <p className="text-lg text-gray-600">Web Producer - Web Specialist</p>
-      <p className="text-lg text-gray-600">Columbia University - New York</p>
+      <h2 className="text-4xl font-bold text-accent">{user.displayName}</h2>
+      <p className="text-lg text-secondary">New York, United States</p>
+      <p className="text-lg text-secondary">Web Producer - Web Specialist</p>
+      <p className="text-lg text-secondary">Columbia University - New York</p>
       <div className="flex space-x-4 mt-4">
-        <p className="text-lg text-gray-600">65 Friends</p>
-        <p className="text-lg text-gray-600">43 Photos</p>
-        <p className="text-lg text-gray-600">21 Comments</p>
+        <p className="text-lg text-secondary">65 Friends</p>
+        <p className="text-lg text-secondary">43 Photos</p>
+        <p className="text-lg text-secondary">21 Comments</p>
       </div>
-      <button className="mt-4 bg-[#46007f] text-white px-8 py-3 rounded-full hover:bg-[#5b0a98] transition duration-300 text-lg">
+      <button className="mt-4 bg-accent text-white px-8 py-3 rounded-full hover:bg-primary transition duration-300 text-lg">
         Connect
       </button>
     </div>
   </div>
 </div>
+
 
 
   );

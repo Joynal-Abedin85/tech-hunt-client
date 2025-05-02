@@ -75,67 +75,67 @@ const Alluser = () => {
   };
   return (
     <>
-      <div className="flex justify-evenly my-5">
-        <div className="text-3xl">All users</div>
-        <div className="text-3xl">Total users {users.length}</div>
-      </div>
-      <div className="overflow-x-auto">
-        <table className="table">
-          {/* head */}
-          <thead>
-            <tr>
-              <th></th>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Role</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {users.map((user, index) => (
-              <tr key={index}>
-                <th>{index + 1}</th>
-                <td>{user.name}</td>
-                <td>{user.email}</td>
-                <td>
-                  
+      <div className="flex justify-evenly my-5 text-text">
+  <div className="text-3xl">All users</div>
+  <div className="text-3xl">Total users {users.length}</div>
+</div>
 
-                  {user.role === "admin" ? (
-                    <span className="text-green-600 font-bold">Admin</span>
-                  ) : user.role === "moderator" ? (
-                    <span className="text-blue-600 font-bold">Moderator</span>
-                  ) : (
-                    <div className="flex space-x-2">
-                      <button
-                        onClick={() => makeadmin(user)}
-                        className="btn btn-ghost btn-lg"
-                      >
-                        <FaUsers className="text-amber-500" />
-                        Make Admin
-                      </button>
-                      <button
-                        onClick={() => makemoderator(user)}
-                        className="btn btn-ghost btn-lg"
-                      >
-                        <FaUsers className="text-blue-500" />
-                        Make Moderator
-                      </button>
-                    </div>
-                  )}
-                </td>
-                <td>
-                  <button
-                    onClick={() => handledelete(user)}
-                    className="btn btn-ghost btn-lg"
-                  >
-                    <FaTrash className="text-red-500"></FaTrash>
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+<div className="overflow-x-auto">
+  <table className="table bg-card text-text border border-border rounded-lg">
+    {/* head */}
+    <thead className="bg-bg text-text">
+      <tr>
+        <th></th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {users.map((user, index) => (
+        <tr key={index} className="hover:bg-hover/10 transition-colors">
+          <th className="border-b border-border">{index + 1}</th>
+          <td className="border-b border-border">{user.name}</td>
+          <td className="border-b border-border">{user.email}</td>
+          <td className="border-b border-border">
+            {user.role === "admin" ? (
+              <span className="text-success font-bold">Admin</span>
+            ) : user.role === "moderator" ? (
+              <span className="text-info font-bold">Moderator</span>
+            ) : (
+              <div className="flex space-x-2">
+                <button
+                  onClick={() => makeadmin(user)}
+                  className="btn btn-ghost btn-sm text-warning"
+                >
+                  <FaUsers />
+                  Make Admin
+                </button>
+                <button
+                  onClick={() => makemoderator(user)}
+                  className="btn btn-ghost btn-sm text-info"
+                >
+                  <FaUsers />
+                  Make Moderator
+                </button>
+              </div>
+            )}
+          </td>
+          <td className="border-b border-border">
+            <button
+              onClick={() => handledelete(user)}
+              className="btn btn-ghost btn-sm text-danger"
+            >
+              <FaTrash />
+            </button>
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+
     </>
   );
 };
