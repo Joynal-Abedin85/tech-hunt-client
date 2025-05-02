@@ -31,73 +31,75 @@ const Login = () => {
 
     }
     return (
-      <div className="hero min-h-screen bg-gradient-to-r from-indigo-800 via-purple-800 to-indigo-800 relative top-[-80px]">
-      <div className="hero-content flex-col lg:flex-row-reverse w-full max-w-6xl">
+      <div className="hero min-h-screen bg-gradient-to-r from-primary via-purple-800 to-primary relative top-[-80px]">
+  <div className="hero-content flex-col lg:flex-row-reverse w-full max-w-6xl">
+    
+    {/* Text Section */}
+    <div className="text-text text-center lg:text-left max-w-lg">
+      <h1 className="text-6xl font-extrabold leading-tight">Welcome Back!</h1>
+      <p className="py-6 text-lg opacity-90">
+        Access your account and explore the amazing features we offer. Your journey starts here.
+      </p>
+    </div>
+    
+    {/* Card Section */}
+    <div className="card bg-card mt-20 backdrop-blur-md shadow-2xl w-full max-w-md text-text p-6 rounded-xl border border-border">
+      <form onSubmit={handlesubmit} className="card-body space-y-4">
         
-        {/* Text Section */}
-        <div className="text-white text-center lg:text-left max-w-lg">
-          <h1 className="text-6xl font-extrabold leading-tight">Welcome Back!</h1>
-          <p className="py-6 text-lg opacity-90">
-            Access your account and explore the amazing features we offer. Your journey starts here.
+        {/* Email */}
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text text-text/90">Email</span>
+          </label>
+          <input 
+            type="email" 
+            name='email' 
+            placeholder="Enter your email" 
+            className="input input-primary bg-card/20 placeholder-text/60 text-text border-border/30" 
+            required 
+          />
+        </div>
+        
+        {/* Password */}
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text text-text/90">Password</span>
+          </label>
+          <input 
+            type="password" 
+            name='password' 
+            placeholder="Enter your password" 
+            className="input input-primary bg-card/20 placeholder-text/60 text-text border-border/30" 
+            required 
+          />
+          <label className="label">
+            <a href="#" className="label-text-alt link link-hover text-text/70 hover:text-text">Forgot password?</a>
+          </label>
+        </div>
+
+        {/* Register */}
+        <div>
+          <p className="text-text/80">
+            Don't have an account?{' '}
+            <NavLink className="text-yellow-300 font-medium hover:underline" to="/register">
+              Register
+            </NavLink>
           </p>
         </div>
         
-        {/* Card Section */}
-        <div className="card bg-white/20 mt-20 backdrop-blur-md shadow-2xl w-full max-w-md text-white p-6 rounded-xl border border-white/30">
-          <form onSubmit={handlesubmit} className="card-body space-y-4">
-            
-            {/* Email */}
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text text-white/90">Email</span>
-              </label>
-              <input 
-                type="email" 
-                name='email' 
-                placeholder="Enter your email" 
-                className="input  input-primary bg-white/20 placeholder-white/60 text-white border-white/30" 
-                required 
-              />
-            </div>
-            
-            {/* Password */}
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text text-white/90">Password</span>
-              </label>
-              <input 
-                type="password" 
-                name='password' 
-                placeholder="Enter your password" 
-                className="input  input-primary bg-white/20 placeholder-white/60 text-white border-white/30" 
-                required 
-              />
-              <label className="label">
-                <a href="#" className="label-text-alt link link-hover text-white/70 hover:text-white">Forgot password?</a>
-              </label>
-            </div>
-    
-            {/* Register */}
-            <div>
-              <p className="text-white/80">
-                Don't have an account?{' '}
-                <NavLink className="text-yellow-300 font-medium hover:underline" to="/register">
-                  Register
-                </NavLink>
-              </p>
-            </div>
-            
-            {/* Button */}
-            <div className="form-control mt-4">
-              <button className="btn btn-primary w-full hover:scale-105 transition-transform duration-200">
-                Login
-              </button>
-            </div>
-            
-          </form>
+        {/* Button */}
+        <div className="form-control mt-4">
+          <button className="btn bg-primary hover:bg-hover w-full hover:scale-105 transition-transform duration-200">
+            Login
+          </button>
         </div>
-      </div>
+        
+      </form>
     </div>
+  </div>
+</div>
+
+    
     
     );
 };
