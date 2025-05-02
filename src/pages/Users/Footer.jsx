@@ -19,16 +19,16 @@ const Footer = () => {
           <h2 className="text-white text-lg font-semibold mb-2">Quick Links</h2>
           <ul className="space-y-1">
             <li>
-              <a className="hover:text-hover">About Us</a>
+              <h1 className="hover:text-hover w-max">About Us</h1>
             </li>
             <li>
-              <a className="hover:text-hover">Services</a>
+              <h1 className="hover:text-hover w-max">Services</h1>
             </li>
             <li>
-              <a className="hover:text-hover">Blog</a>
+              <h1 className="hover:text-hover w-max">Blog</h1>
             </li>
             <li>
-              <a className="hover:text-hover">Contact</a>
+              <h1 className="hover:text-hover w-max">Contact</h1>
             </li>
           </ul>
         </div>
@@ -52,15 +52,15 @@ const Footer = () => {
             </button>
           </form>
           <div className="flex space-x-4 mt-4">
-            <a href="#" className="hover:text-hover">
+            <h1  className="hover:text-hover w-max">
               <FaTwitter size={20} />
-            </a>
-            <a href="#" className="hover:text-hover">
+            </h1>
+            <h1 className="hover:text-hover w-max">
               <FaLinkedin size={20} />
-            </a>
-            <a href="#" className="hover:text-hover">
+            </h1>
+            <h1 className="hover:text-hover w-max">
               <FaGithub size={20} />
-            </a>
+            </h1>
           </div>
         </div>
       </div>
