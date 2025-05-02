@@ -16,6 +16,7 @@ export default {
         border: '#334155',
         card: '#1E293B',
         primary: '#6366F1',
+        secondary: '#939393',
       },
     },
   },
