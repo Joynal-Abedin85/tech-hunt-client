@@ -14,7 +14,7 @@ import Uniqe from '../home/Uniqe';
 
 const Home = () => {
     return (
-        <div className='text-[#46007f] bg-[#ead6fc]'>
+        <div className='text-text bg-bg'>
             <Slider></Slider>
             {/* <Featured></Featured> */}
             <Tranding></Tranding>
