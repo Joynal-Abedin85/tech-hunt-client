@@ -43,7 +43,7 @@ const Login = () => {
         </div>
         
         {/* Card Section */}
-        <div className="card bg-white/20 backdrop-blur-md shadow-2xl w-full max-w-md text-white p-6 rounded-xl border border-white/30">
+        <div className="card bg-white/20 mt-20 backdrop-blur-md shadow-2xl w-full max-w-md text-white p-6 rounded-xl border border-white/30">
           <form onSubmit={handlesubmit} className="card-body space-y-4">
             
             {/* Email */}
@@ -55,7 +55,7 @@ const Login = () => {
                 type="email" 
                 name='email' 
                 placeholder="Enter your email" 
-                className="input input-bordered input-primary bg-white/20 placeholder-white/60 text-white border-white/30" 
+                className="input  input-primary bg-white/20 placeholder-white/60 text-white border-white/30" 
                 required 
               />
             </div>
@@ -69,7 +69,7 @@ const Login = () => {
                 type="password" 
                 name='password' 
                 placeholder="Enter your password" 
-                className="input input-bordered input-primary bg-white/20 placeholder-white/60 text-white border-white/30" 
+                className="input  input-primary bg-white/20 placeholder-white/60 text-white border-white/30" 
                 required 
               />
               <label className="label">
