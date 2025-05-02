@@ -49,28 +49,31 @@ const Review = () => {
   const displayedReviews = showMore ? allReviews : allReviews.slice(0, 3);
 
   return (
-    <section className=" py-16 px-6">
+    <section className="bg-bg py-16 px-6 text-text">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-4xl font-bold text-gray-800 mb-4">
+        <h2 className="text-4xl font-bold text-primary mb-4">
           ⭐ What Our Users Say
         </h2>
-        <p className="text-lg text-gray-600 mb-10">
+        <p className="text-lg text-text/80 mb-10">
           Real feedback from our satisfied customers worldwide.
         </p>
 
         <div className="grid md:grid-cols-3 gap-8">
           {displayedReviews.map((review) => (
-            <div key={review.id} className="bg-white p-6 rounded-xl shadow-lg">
-              <p className=" italic">"{review.text}"</p>
+            <div
+              key={review.id}
+              className="bg-card p-6 rounded-xl shadow-lg border border-border hover:shadow-xl transition"
+            >
+              <p className="italic text-text/90">"{review.text}"</p>
               <div className="flex items-center mt-4">
                 <img
                   src={review.image}
                   alt={review.name}
-                  className="w-12 h-12 rounded-full mr-3"
+                  className="w-12 h-12 rounded-full mr-3 border border-border"
                 />
                 <div>
-                  <p className="font-semibold text-gray-800">{review.name}</p>
-                  <p className="text-sm text-gray-500">{review.role}</p>
+                  <p className="font-semibold text-primary">{review.name}</p>
+                  <p className="text-sm text-text/60">{review.role}</p>
                 </div>
               </div>
             </div>
@@ -80,7 +83,7 @@ const Review = () => {
         <div className="mt-10">
           <button
             onClick={() => setShowMore(!showMore)}
-            className="text-blue-600 font-semibold hover:underline focus:outline-none"
+            className="text-primary font-semibold hover:underline focus:outline-none"
           >
             {showMore ? "Show Less Reviews ↑" : "Read More Reviews →"}
           </button>
