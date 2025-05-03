@@ -3,7 +3,7 @@ import React from "react";
 const Blog = () => {
   return (
     <div>
-      <section className="py-16 px-6 bg-primary text-text">
+      <section className="py-18 pb-8 pt-20 px-6 bg-primary text-text">
   <div className="max-w-7xl mx-auto text-center">
     <h2 className="text-4xl font-bold mb-8">Our Latest Blogs</h2>
     <p className="text-lg mb-12 text-text/90">

@@ -38,14 +38,14 @@ const Statistic = () => {
     <div>
       <h2 className="text-3xl text-center my-5">
         Hi{" "}
-        <span className="text-amber-500">
+        <span className="text-text">
           {user?.displayName ? user.displayName : "Admin"}
         </span>
         , Welcome!
       </h2>
 
       <div className="flex flex-col items-center">
-        <div className="w-full max-w-lg bg-white p-6 rounded-lg shadow-lg">
+        <div className="w-full max-w-lg bg-bg p-6 rounded-lg shadow-lg">
           <h3 className="text-xl font-bold text-center mb-4">Site Overview</h3>
           <h2 className="text-center ">click the chart to show length</h2>
           <Pie data={chartData} />

@@ -41,7 +41,7 @@ export default function Slider() {
   };
 
   return (
-    <div className="relative overflow-hidden h-[400px] w-full">
+    <div className=" overflow-hidden pt-2 h-[600px] w-full">
       {slides.map((slide, index) => (
         <motion.div
           key={slide.id}

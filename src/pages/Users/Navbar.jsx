@@ -29,7 +29,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="navbar text-bg bg-base-100 fixed z-20 bg-opacity-35 backdrop-blur-md">
+    <div className="navbar text-bg bg-primary  fixed z-20 bg-opacity-35 backdrop-blur-md">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -55,7 +55,7 @@ const Navbar = () => {
             {menu}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl text-primary">TECH HUNT</a>
+        <a className=" text-2xl text-text">TECH<span className="bg-text border text-primary">HUNT</span></a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 gap-4">{menu}</ul>
@@ -75,21 +75,21 @@ const Navbar = () => {
               </div>
               <ul
                 tabIndex={0}
-                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+                className="menu menu-sm dropdown-content bg-bg rounded-box z-[1] mt-3 w-52 p-2 shadow"
               >
                 <li>
                   <a className="justify-between text-text">
                     {user.displayName}
                   </a>
                 </li>
-                <NavLink to="/dashboard">
+                <NavLink to="/dashboard/myprofile">
                   <li>
                     <a className="text-text hover:text-primary">DASHBOARD</a>
                   </li>
                 </NavLink>
                 <h3
                   onClick={logouts}
-                  className="btn hover:bg-primary hover:text-white border-transparent hover:bg-transparent border-[#00c6ff] text-[#00c6ff] hover:border-2"
+                  className="btn hover:bg-primary hover:text-text  bg-bg hover:bg-transparent border-primary text-primary hover:border-2  hover:border-primary"
                 >
                   Sign Out
                 </h3>

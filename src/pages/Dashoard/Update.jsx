@@ -40,7 +40,7 @@ const Update = () => {
     };
   
     return (
-      <div className="max-w-md mx-auto mt-10 p-6 bg-white shadow rounded">
+      <div className="max-w-md mx-auto mt-10 p-6 bg-bg shadow rounded">
         <h2 className="text-2xl font-bold mb-4">Update Product</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
@@ -64,7 +64,7 @@ const Update = () => {
           </div>
           <button
             type="submit"
-            className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+            className="bg-primary text-text px-4 py-2 rounded hover:hover"
           >
             Update Product
           </button>

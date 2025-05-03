@@ -7,7 +7,7 @@ const Mainlayout = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <div className='relative top-20'>
+            <div className=''>
             <Outlet></Outlet>
             </div>
             

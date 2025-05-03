@@ -46,45 +46,42 @@ const Reported = () =>  {
     };
   
     return (
-      <div className="container mx-auto p-6">
-        <h2 className="text-2xl font-semibold text-center mb-6">Product Management</h2>
-        <div className="overflow-x-auto">
-          <table className="table-auto w-full border border-gray-200">
-            <thead className="bg-gray-100">
-              <tr>
-                <th className="px-4 py-2 border">Product Name</th>
-                <th className="px-4 py-2 border">Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              {products.map((product) => (
-                <tr key={product._id} className="text-center">
-                  <td className="px-4 py-2 border">{product.productName}</td>
-                  <td className="px-4 py-2 border">
-                    <div className="flex justify-center gap-2">
-                        <NavLink to={`/details/${product.productId}`}>
-                        
-                        <button
-                        className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-                      >
-                        View Details
-                      </button>
-                        </NavLink>
-                      
-                      <button
-                        onClick={() => handleDelete(product.productId)}
-                        className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
-                      >
-                        Delete
-                      </button>
-                    </div>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
+      <div className="container mx-auto p-6 text-text">
+  <h2 className="text-2xl font-semibold text-center mb-6">Product Management</h2>
+  <div className="overflow-x-auto">
+    <table className="table-auto w-full border border-border bg-card rounded">
+      <thead className="bg-bg text-text">
+        <tr>
+          <th className="px-4 py-2 border border-border">Product Name</th>
+          <th className="px-4 py-2 border border-border">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {products.map((product) => (
+          <tr key={product._id} className="text-center hover:bg-hover/10 transition">
+            <td className="px-4 py-2 border border-border">{product.productName}</td>
+            <td className="px-4 py-2 border border-border">
+              <div className="flex justify-center gap-2">
+                <NavLink to={`/details/${product.productId}`}>
+                  <button className="px-4 py-2 bg-primary text-white rounded hover:bg-hover">
+                    View Details
+                  </button>
+                </NavLink>
+                <button
+                  onClick={() => handleDelete(product.productId)}
+                  className="px-4 py-2 bg-accent text-white rounded hover:bg-hover"
+                >
+                  Delete
+                </button>
+              </div>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</div>
+
     );
   };
   

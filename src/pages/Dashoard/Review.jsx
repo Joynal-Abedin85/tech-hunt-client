@@ -86,30 +86,30 @@ const Review = () => {
               <div className="flex flex-col md:flex-row items-center justify-between">
                 <div>
                   <h3 className="text-xl font-semibold">{product.name}</h3>
-                  <p className="text-gray-600">Status: {product.status}</p>
+                  <p className="text-text">Status: {product.status}</p>
                 </div>
                 <div className="flex flex-wrap gap-2 mt-4 md:mt-0">
                   <NavLink to={`/details/${product._id}`}
-                    className="px-4 py-2 border hover:text-slate-950 border-gray-300 text-gray-300 rounded hover:bg-gray-100"
+                    className="px-4 py-2 border hover:text-slate-950 border-border text-text rounded hover:hover"
                     onClick={() => viewDetails(product._id)}
                   >
                     View Details
                   </NavLink>
                   <button
-                    className="px-4 py-2 text-blue-500 hover:text-white rounded hover:bg-blue-600"
+                    className="px-4 py-2 text-text hover:text-text rounded hover:hover"
                     onClick={() => handleMakeFeatured(product._id)}
                   >
                     Make Featured
                   </button>
                   <button
-                    className={`px-4 py-2 hover:text-white rounded ${product.status === "Accepted" ? "bg-gray-400 cursor-not-allowed" : "text-green-500 hover:bg-green-600"}`}
+                    className={`px-4 py-2 hover:hover rounded ${product.status === "Accepted" ? "bg-bg cursor-not-allowed" : "text-green-500 hover:bg-green-600"}`}
                     onClick={() => handleAccept(product._id)}
                     disabled={product.status === "Accepted"}
                   >
                     Accept
                   </button>
                   <button
-                    className={`px-4 py-2 hover:text-white rounded ${product.status === "Rejected" ? "bg-gray-400 cursor-not-allowed" : "text-red-500 hover:bg-red-600"}`}
+                    className={`px-4 py-2 hover:hover rounded ${product.status === "Rejected" ? "bg-bg cursor-not-allowed" : "text-red-500 hover:bg-red-600"}`}
                     onClick={() => handleReject(product._id)}
                     disabled={product.status === "Rejected"}
                   >
