@@ -30,7 +30,7 @@ const Tranding = () => {
   console.log(products);
 
   return (
-    <div className="max-w-7xl mx-auto p-6">
+    <div className="max-w-7xl mx-auto pt-20 p-6">
     <h2 className="text-4xl font-bold text-primary text-center mb-8">
       Trending Products
     </h2>

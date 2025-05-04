@@ -1,5 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
+import {
+  BiLeftArrow,
+  BiRightArrowAlt,
+  BiRightArrowCircle,
+  BiSolidLeftArrowAlt,
+  BiSolidRightArrow,
+  BiSolidRightArrowAlt,
+  BiSolidRightArrowSquare,
+} from "react-icons/bi";
 // import { Button } from "@/components/ui/button";
 
 const slides = [
@@ -41,7 +50,7 @@ export default function Slider() {
   };
 
   return (
-    <div className=" overflow-hidden pt-2 h-[600px] w-full">
+    <div className="relative w-full h-[600px] overflow-hidden">
       {slides.map((slide, index) => (
         <motion.div
           key={slide.id}
@@ -57,10 +66,13 @@ export default function Slider() {
           }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.6 }}
-          className="absolute top-0 left-0 h-full w-full bg-cover bg-center"
-          style={{ backgroundImage: `url(${slide.bgImage})` }}
+          className="absolute top-0 left-0 w-full h-full bg-cover bg-center"
+          style={{
+            backgroundImage: `url(${slide.bgImage})`,
+            maxHeight: "700px",
+          }}
         >
-          <div className="absolute inset-0 bg-bg/70 flex flex-col justify-center items-center text-text text-center px-4">
+          <div className="absolute inset-0 bg-bg/70 flex flex-col justify-center items-center text-text text-center px-4 h-full">
             <h2 className="text-6xl font-bold mb-2 font-calligraphy text-primary">
               {slide.title}
             </h2>
@@ -72,18 +84,19 @@ export default function Slider() {
         </motion.div>
       ))}
 
-      <div className="absolute top-2/3 transform -translate-y-1/2 left-4 flex gap-2">
+      {/* Slider Controls */}
+      <div className="absolute bottom-10  flex  w-full justify-center gap-2">
         <button
           onClick={handlePrev}
-          className="  px-4 py-2 rounded-md duration-500 shadow-md bg-primary text-text hover:shadow-primary hover:bg-transparent hover:border-primary border-2 border-transparent transition"
+          className="px-3 text-2xl rounded-md duration-500 shadow-md bg-primary text-text hover:shadow-primary hover:bg-transparent hover:border-primary border-2 border-transparent transition"
         >
-          Prev
+          <BiSolidLeftArrowAlt />
         </button>
         <button
           onClick={handleNext}
-          className=" px-4 py-2 rounded-md duration-500 shadow-md bg-primary text-text hover:shadow-primary hover:bg-transparent hover:border-primary border-2 border-transparent transition"
+          className="px-3 text-2xl py-1 rounded-md duration-500 shadow-md bg-primary text-text hover:shadow-primary hover:bg-transparent hover:border-primary border-2 border-transparent transition"
         >
-          Next
+          <BiSolidRightArrowAlt />
         </button>
       </div>
     </div>

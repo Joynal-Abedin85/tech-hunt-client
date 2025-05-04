@@ -29,8 +29,9 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="navbar text-bg bg-primary  fixed z-20 bg-opacity-35 backdrop-blur-md">
-      <div className="navbar-start">
+    <div className=" text-bg bg-primary w-full  fixed z-20 bg-opacity-35 backdrop-blur-md">
+      <div className="flex max-w-7xl mx-auto px-5 py-2 justify-between ">
+      <div className="">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost text-text lg:hidden">
             <svg
@@ -57,10 +58,10 @@ const Navbar = () => {
         </div>
         <a className=" text-2xl text-text">TECH<span className="bg-text border text-primary">HUNT</span></a>
       </div>
-      <div className="navbar-center hidden lg:flex">
+      <div className=" hidden lg:flex">
         <ul className="menu menu-horizontal px-1 gap-4">{menu}</ul>
       </div>
-      <div className="navbar-end">
+      <div className="">
         {user ? (
           <>
             <div className="dropdown dropdown-end">
@@ -100,12 +101,13 @@ const Navbar = () => {
           <>
             <NavLink
               to="login"
-              className="btn bg-bg text-text border-transparent hover:bg-transparent hover:border-primary hover:text-text hover:border-2"
+              className="rounded-md bg-bg text-text border-transparent hover:bg-transparent hover:border-primary hover:text-text hover:border-2"
             >
               Sign In
             </NavLink>
           </>
         )}
+      </div>
       </div>
     </div>
   );
