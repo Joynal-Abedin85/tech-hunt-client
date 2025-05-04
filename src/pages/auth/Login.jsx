@@ -31,7 +31,7 @@ const Login = () => {
 
     }
     return (
-      <div className="hero min-h-screen bg-gradient-to-r from-primary via-purple-800 to-primary relative top-[-80px]">
+      <div className="hero min-h-screen pt-24 bg-gradient-to-r from-bg via-card to-primary relative ">
   <div className="hero-content flex-col lg:flex-row-reverse w-full max-w-6xl">
     
     {/* Text Section */}

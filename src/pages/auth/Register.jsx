@@ -51,7 +51,7 @@ const Register = () => {
     });
   };
   return (
-    <div className="hero relative top-[-80px] min-h-screen bg-bg">
+    <div className="hero relative pt-20 min-h-screen bg-bg">
   <div className="hero-content py-20 flex-col lg:flex-row-reverse">
     <div className="text-center  lg:text-left">
       <h1 className="text-5xl font-bold text-text">Register Now!</h1>
@@ -62,8 +62,8 @@ const Register = () => {
       </p>
     </div>
 
-    <div className="card w-full max-w-sm shrink-0 shadow-2xl bg-card border border-border">
-      <form onSubmit={handleSubmit(onSubmit)} className="card-body">
+    <div className="card w-full max-w-sm shrink-0 p-5 shadow-2xl bg-card border border-border">
+      <form onSubmit={handleSubmit(onSubmit)} className="">
         
         {/* Name Field */}
         <div className="form-control">
@@ -122,11 +122,7 @@ const Register = () => {
             className="input input-bordered bg-card text-text placeholder-text/60 border-border/30"
             required
           />
-          <label className="label">
-            <a href="#" className="label-text-alt link link-hover text-text/70 hover:text-text">
-              Forgot password?
-            </a>
-          </label>
+         
         </div>
 
         {/* Account Link */}
@@ -141,7 +137,7 @@ const Register = () => {
 
         {/* Register Button */}
         <div className="form-control mt-6">
-          <button className="btn bg-primary text-text hover:bg-hover w-full">
+          <button className="btn border-transparent bg-primary text-text hover:border-primary hover:bg-card w-full">
             Register
           </button>
         </div>

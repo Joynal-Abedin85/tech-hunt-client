@@ -26,8 +26,8 @@ const Sociallogin = () => {
     return (
         <div>
             <div className="divider">or</div>
-            <button onClick={handlegoogle} className='btn btn-outline ml-8 mb-4'>
-                <FaGoogle></FaGoogle>google</button>
+            <button onClick={handlegoogle} className='text-text border hover:bg-primary border-primary flex items-center justify-center py-3 rounded-md w-full  mb-5'>
+                <FaGoogle className='text-text  mr-2 text-xl'></FaGoogle> <span >google</span></button>
         </div>
     );
 };

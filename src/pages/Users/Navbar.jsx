@@ -100,7 +100,7 @@ const Navbar = () => {
           <>
             <NavLink
               to="login"
-              className="btn bg-bg text-text border-transparent hover:bg-transparent hover:border-border hover:text-bg hover:border-2"
+              className="btn bg-bg text-text border-transparent hover:bg-transparent hover:border-primary hover:text-text hover:border-2"
             >
               Sign In
             </NavLink>
