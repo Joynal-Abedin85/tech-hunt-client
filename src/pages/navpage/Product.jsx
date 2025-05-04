@@ -30,7 +30,7 @@ const Product = () => {
   };
 
   return (
-    <div className="bg-accent px-5 py-24   pt-20 text-text">
+    <div className="bg-bg px-5 py-24   pt-20 text-text">
     {/* Sort Button */}
     <div className="mb-6 flex justify-end">
       <button
@@ -42,11 +42,11 @@ const Product = () => {
     </div>
   
     {/* Product Grid */}
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-6">
       {sortedProducts.map((product) => (
         <div
           key={product._id}
-          className="bg-card shadow-lg rounded-lg p-4 border border-border flex flex-col justify-between h-full"
+          className="bg-card shadow rounded-lg p-4 shadow-primary border-border flex flex-col justify-between h-full"
         >
           {/* Image */}
           <img
@@ -76,13 +76,13 @@ const Product = () => {
           )}
   
           {/* Actions Row */}
-          <div className="flex justify-between items-center mt-auto pt-4">
+          <div className="flex  justify-between items-center mt-auto pt-4">
             <Upvotevtn
               product={product}
               className="bg-primary text-text px-4 py-1 rounded hover:bg-hover hover:text-bg transition"
             />
             <NavLink to={`/details/${product._id}`}>
-              <button className="bg-hover text-bg px-4 py-1 rounded hover:bg-card hover:text-hover border border-hover transition">
+              <button className="bg-hover font-semibold text-bg px-4 py-1 rounded hover:bg-card hover:text-hover border border-hover transition">
                 Details
               </button>
             </NavLink>

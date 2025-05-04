@@ -2,9 +2,6 @@
 
 import React, { useContext } from "react";
 import { Authcontext } from "../auth/Authprovider";
-// import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-// import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-// import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 const Myprofile = () => {
   const {user} = useContext(Authcontext)
@@ -18,7 +15,7 @@ const Myprofile = () => {
 
   return (
 
-<div className="container mx-auto p-6 flex justify-center items-center">
+<div className="container  mx-auto p-6 flex justify-center items-center">
   {/* Profile Header */}
   <div className="mb-8 bg-card text-text p-12 rounded-lg shadow-2xl w-full max-w-3xl">
     <div className="flex items-center space-x-8">

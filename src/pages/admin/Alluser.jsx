@@ -74,8 +74,8 @@ const Alluser = () => {
       });
   };
   return (
-    <>
-      <div className="flex justify-evenly my-5 text-text">
+    <div className="min-h-screen">
+      <div className="flex justify-evenly  my-5 text-text">
   <div className="text-3xl">All users</div>
   <div className="text-3xl">Total users {users.length}</div>
 </div>
@@ -136,7 +136,7 @@ const Alluser = () => {
   </table>
 </div>
 
-    </>
+    </div>
   );
 };
 

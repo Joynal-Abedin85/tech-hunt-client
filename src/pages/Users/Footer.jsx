@@ -3,13 +3,14 @@ import { FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-card text-text mt-20 py-6">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+    <footer className="bg-hover/30 text-text mt-20 py-6">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 px-6 gap-6">
         {/* Logo and Description */}
         <div className="flex flex-col items-start">
-          <h1 className="text-white text-2xl font-bold mb-2">TechHUNT</h1>
-          <p className="text-sm text-text/80">
+        <h1 className="  flex  text-2xl  text-text">TECH<span className="bg-text border text-primary">HUNT</span></h1>
+          <p className="text-sm mt-5  text-text/80">
             Building the future with innovative solutions, cutting-edge
+            tutorials, and tech resources. Building the future with innovative solutions, cutting-edge
             tutorials, and tech resources.
           </p>
         </div>
@@ -42,7 +43,7 @@ const Footer = () => {
             <input
               type="email"
               placeholder="Enter your email"
-              className="p-2 rounded-md bg-card border border-border text-text/80 placeholder:text-text"
+              className="p-2 rounded-md bg-card border border-primary text-text/80 placeholder:text-text"
             />
             <button
               type="submit"
@@ -67,7 +68,7 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="border-t border-border mt-6 pt-4 text-center text-sm text-text/60">
-        © {new Date().getFullYear()} TechHUNT. All Rights Reserved.
+        © {new Date().getFullYear()} joynal-abedin. All Rights Reserved.
       </div>
     </footer>
   );

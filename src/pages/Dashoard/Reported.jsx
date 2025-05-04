@@ -46,7 +46,7 @@ const Reported = () =>  {
     };
   
     return (
-      <div className="container mx-auto p-6 text-text">
+      <div className="container mx-auto p-6 min-h-screen text-text">
   <h2 className="text-2xl font-semibold text-center mb-6">Product Management</h2>
   <div className="overflow-x-auto">
     <table className="table-auto w-full border border-border bg-card rounded">
@@ -61,7 +61,7 @@ const Reported = () =>  {
           <tr key={product._id} className="text-center hover:bg-hover/10 transition">
             <td className="px-4 py-2 border border-border">{product.productName}</td>
             <td className="px-4 py-2 border border-border">
-              <div className="flex justify-center gap-2">
+              <div className="flex justify-center items-center gap-2">
                 <NavLink to={`/details/${product.productId}`}>
                   <button className="px-4 py-2 bg-primary text-white rounded hover:bg-hover">
                     View Details
@@ -69,7 +69,7 @@ const Reported = () =>  {
                 </NavLink>
                 <button
                   onClick={() => handleDelete(product.productId)}
-                  className="px-4 py-2 bg-accent text-white rounded hover:bg-hover"
+                  className="px-4 py-2 h-max flex  bg-accent text-white rounded hover:bg-hover"
                 >
                   Delete
                 </button>

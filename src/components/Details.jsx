@@ -131,7 +131,7 @@ const Details = () => {
   };
 
   return (
-    <div className="p-6 space-y-10 text-text">
+    <div className="p-6 pt-24 space-y-10 bg-bg text-text">
       {/* Product Details Section */}
       <div className="border border-border rounded-lg shadow p-6 bg-card">
         <div className="flex items-center space-x-6">
@@ -180,7 +180,7 @@ const Details = () => {
                   <h4 className="font-semibold text-text">
                     {review.ownername}
                   </h4>
-                  <p className="text-sm text-secondary">
+                  <p className="text-sm  text-secondary">
                     Rating: {review.rating}/5
                   </p>
                 </div>
@@ -203,7 +203,7 @@ const Details = () => {
             min="1"
             max="5"
             {...register("rating", { required: "Rating is required" })}
-            className="w-full p-2 border border-border rounded bg-card text-text"
+            className="w-full p-2 mt-3 border border-border rounded bg-card text-text"
             required
           />
         </div>
@@ -217,7 +217,7 @@ const Details = () => {
             {...register("description", {
               required: "Description is required",
             })}
-            className="w-full p-2 border border-border rounded bg-card text-text"
+            className="w-full p-2 border mt-3 border-border rounded bg-card text-text"
             rows={4}
           />
         </div>

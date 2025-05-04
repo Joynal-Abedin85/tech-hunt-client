@@ -78,7 +78,7 @@ const Review = () => {
     };
   
     return (
-        <div className="p-6">
+        <div className="p-6 text-text">
         <h2 className="text-2xl font-bold mb-6">Product Moderation</h2>
         <div className="grid grid-cols-1 gap-6">
           {products?.map((product) => (
@@ -102,14 +102,14 @@ const Review = () => {
                     Make Featured
                   </button>
                   <button
-                    className={`px-4 py-2 hover:hover rounded ${product.status === "Accepted" ? "bg-bg cursor-not-allowed" : "text-green-500 hover:bg-green-600"}`}
+                    className={`px-4 py-2 hover:hover rounded ${product.status === "Accepted" ? "bg-text/10 cursor-not-allowed text-text/40" : "text-green-500 hover:bg-green-600"}`}
                     onClick={() => handleAccept(product._id)}
                     disabled={product.status === "Accepted"}
                   >
-                    Accept
+                    {product.status === "Accepted" ? <span>accepted</span> : "accept"}
                   </button>
                   <button
-                    className={`px-4 py-2 hover:hover rounded ${product.status === "Rejected" ? "bg-bg cursor-not-allowed" : "text-red-500 hover:bg-red-600"}`}
+                    className={`px-4 py-2 hover:hover rounded ${product.status === "Rejected" ? "bg-bg cursor-not-allowed" : "text-red-500 hover:bg-hover/30"}`}
                     onClick={() => handleReject(product._id)}
                     disabled={product.status === "Rejected"}
                   >

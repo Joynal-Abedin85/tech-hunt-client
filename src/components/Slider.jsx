@@ -65,7 +65,7 @@ export default function Slider() {
               {slide.title}
             </h2>
             <p className="text-lg mb-4">{slide.description}</p>
-            <button className="btn border border-border text-text bg-transparent hover:bg-hover hover:text-bg transition">
+            <button className="btn border border-hover shadow-md shadow-primary hover:border-transparent text-text bg-transparent hover:bg-hover hover:text-bg transition">
               Learn More
             </button>
           </div>
@@ -75,13 +75,13 @@ export default function Slider() {
       <div className="absolute top-2/3 transform -translate-y-1/2 left-4 flex gap-2">
         <button
           onClick={handlePrev}
-          className="btn bg-primary text-text hover:bg-hover border border-border transition"
+          className="  px-4 py-2 rounded-md duration-500 shadow-md bg-primary text-text hover:shadow-primary hover:bg-transparent hover:border-primary border-2 border-transparent transition"
         >
           Prev
         </button>
         <button
           onClick={handleNext}
-          className="btn bg-primary text-text hover:bg-hover border border-border transition"
+          className=" px-4 py-2 rounded-md duration-500 shadow-md bg-primary text-text hover:shadow-primary hover:bg-transparent hover:border-primary border-2 border-transparent transition"
         >
           Next
         </button>
